@@ -6,7 +6,7 @@ public class Principal {
 		Factorial fact = new Factorial();
 
 		try {
-			double valor = fact.factorialRecursiu(3);
+			double valor = fact.factorialRecursiu(5);
 			System.out.println(valor);
 		} catch (IllegalArgumentException e) {
 			System.out.println("No es poden fer servir nombres negatius.");
