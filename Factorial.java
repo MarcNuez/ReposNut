@@ -26,6 +26,6 @@ public class Factorial {
 		}
 		Factorial fmenos1 = new Factorial();
 		return n * fmenos1.factorialRecursiu(n - 1);
-	}
+	}holii
 
 }
