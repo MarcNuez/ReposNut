@@ -1,0 +1,11 @@
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\bin\Debug\Domain.dll
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\bin\Debug\Domain.pdb
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\bin\Debug\DataAccess.dll
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\bin\Debug\DataAccess.pdb
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\obj\Debug\Domain.csprojAssemblyReference.cache
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\obj\Debug\Domain.csproj.CopyComplete
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\obj\Debug\Domain.dll
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\obj\Debug\Domain.pdb
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\bin\Debug\Comun.dll
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Domain\bin\Debug\Comun.pdb

@@ -1,0 +1,9 @@
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\obj\Debug\DataAccess.pdb
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\bin\Debug\Comun.dll
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\bin\Debug\Comun.pdb
+C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\DataAccess\obj\Debug\DataAccess.csproj.CopyComplete
