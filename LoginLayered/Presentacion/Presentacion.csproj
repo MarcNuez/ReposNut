@@ -237,6 +237,9 @@
     <EmbeddedResource Include="CustomControls\UserControlMensual.resx">
       <DependentUpon>UserControlMensual.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditarPerfiles.resx">
+      <DependentUpon>EditarPerfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAusencias.resx">
       <DependentUpon>FormAusencias.cs</DependentUpon>
     </EmbeddedResource>

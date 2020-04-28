@@ -44,6 +44,7 @@
     <Compile Include="AusenciasModel.cs" />
     <Compile Include="DiasElegidosModel.cs" />
     <Compile Include="DiasVacacionesModel.cs" />
+    <Compile Include="GestionAdminModel.cs" />
     <Compile Include="TiposAusenciasModel.cs" />
     <Compile Include="UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
