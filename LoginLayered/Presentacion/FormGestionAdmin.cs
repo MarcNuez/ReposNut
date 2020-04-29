@@ -22,14 +22,15 @@ namespace Presentacion
         private List<DataGridViewRow> lista = new List<DataGridViewRow>();
         private string estadoSeleccionado;
         CultureInfo culture = CultureInfo.InvariantCulture;
+        private GestionAdminModel gModel = new GestionAdminModel();
 
         private void FormGestionAdmin_Load(object sender, EventArgs e)
         {
-            cmbEstado.SelectedItem = "Pendientes";
 
+            cmbEstado.SelectedItem = "Pendientes"; //esto llama autoamticamente el evento selectionchanged
 
-            dataGrid.CurrentCell.Selected = false;
-
+            
+         
 
 
         }
@@ -70,7 +71,7 @@ namespace Presentacion
 
         private void cargarGrid(string estado)
         {
-            var gModel = new GestionAdminModel();
+
 
             var dt = gModel.obtenerVacacionesUsuarios();
             dataGrid.Rows.Clear();
@@ -78,16 +79,51 @@ namespace Presentacion
             {
                 if (estado == "Todas")
                 {
-                    dataGrid.Rows.Add(dr[0], dr[1], dr[2].ToString().Substring(0, 10), dr[3]);
+                    dataGrid.Rows.Add(dr[0], dr[1], dr[2], dr[3], dr[4].ToString().Substring(0, 10), dr[5]);
+
+
                 }
-                else if (dr[1].ToString() == estado)
+                else if (dr[3].ToString() == estado)
                 {
-                    dataGrid.Rows.Add(dr[0], dr[1], dr[2].ToString().Substring(0, 10), dr[3]);
+                    dataGrid.Rows.Add(dr[0], dr[1], dr[2], dr[3], dr[4].ToString().Substring(0, 10), dr[5]);
+
+
+
                 }
 
 
 
             }
+            //las que ya esten aprobadas no podras marcar cell y las pendientes estaran al iniciarse en false
+            foreach (DataGridViewRow dr in dataGrid.Rows)
+            {
+
+
+                if (dr.Cells[3].Value.ToString() == "Aprobada")
+                {
+                    dr.Cells[3].Style.BackColor = Color.FromArgb(172, 252, 208);
+                   
+                    dr.Cells[6].Value = true;
+                    dr.Cells[6].ReadOnly = true;
+                }
+                else
+                {
+
+                    dr.Cells[6].Value = false;
+
+                }
+
+
+               
+
+
+            }
+            if (dataGrid.Rows.Count>0)
+            {
+                dataGrid.CurrentCell.Selected = false;
+            }
+            
+
             cargarLista();
 
         }
@@ -107,7 +143,7 @@ namespace Presentacion
                 }
 
 
-                
+
 
             }
 
@@ -119,18 +155,18 @@ namespace Presentacion
         {
             foreach (DataGridViewRow d in dataGrid.SelectedRows)
             {
-                if (d.Cells[4].Value == null)
+                if (d.Cells[3].Value.ToString() == "Pendiente")
                 {
-                    d.Cells[4].Value = false;
+                    if ((bool)d.Cells[6].Value)
+                    {
+                        d.Cells[6].Value = false;
+                    }
+                    else
+                    {
+                        d.Cells[6].Value = true;
+                    }
                 }
-                if ((bool)d.Cells[4].Value)
-                {
-                    d.Cells[4].Value = false;
-                }
-                else
-                {
-                    d.Cells[4].Value = true;
-                }
+                
 
 
 
@@ -143,6 +179,54 @@ namespace Presentacion
             cargarGrid(estadoSeleccionado);
         }
 
-        
+
+
+        private void FormGestionAdmin_Click(object sender, EventArgs e)
+        {
+            dataGrid.ClearSelection();
+        }
+
+        private void btnAprobar_Click(object sender, EventArgs e)
+        {
+            var count = 0;
+
+            foreach (DataGridViewRow dr in dataGrid.Rows)
+            {
+                if ((bool)dr.Cells[6].Value == true && dr.Cells[3].Value.ToString() == "Pendiente")
+                {
+                    gModel.aprobarVacaciones(Int32.Parse(dr.Cells[0].Value.ToString()));
+                    count++;
+                }
+
+            }
+            MessageBox.Show("Se han aprobado: "+ count);
+            cargarGrid(estadoSeleccionado);
+        }
+
+        private void dataGrid_SelectionChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dataGrid_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.ColumnIndex == 7 && dataGrid.Rows[e.RowIndex].Cells[3].Value.ToString() == "Pendiente")
+            {
+                var id_dia = (int)dataGrid.Rows[e.RowIndex].Cells[0].Value;
+                var id_user = (int)dataGrid.Rows[e.RowIndex].Cells[1].Value;
+                var dia = DateTime.Parse(dataGrid.Rows[e.RowIndex].Cells[4].Value.ToString());
+                var comentario = "por defecto";
+
+                if (MessageBox.Show("¿Desea eliminar el dia?", "Atención",
+             MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) ;
+                gModel.denegarVacaciones(id_dia,id_user,dia,comentario);
+                cargarGrid(estadoSeleccionado);
+
+
+            }else if (e.ColumnIndex == 7 && dataGrid.Rows[e.RowIndex].Cells[3].Value.ToString() == "Aprobada")
+            {
+                MessageBox.Show("Ya esta aprobada, para cancelar...");
+            }
+        }
     }
 }

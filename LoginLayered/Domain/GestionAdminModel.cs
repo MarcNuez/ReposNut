@@ -1,4 +1,5 @@
-﻿using DataAccess.SqlServer;
+﻿using Comun.Cache;
+using DataAccess.SqlServer;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,18 +14,25 @@ namespace Domain
         GestionAdminDAO gDao = new GestionAdminDAO();
 
 
-        
+
 
         public DataTable obtenerVacacionesUsuarios()
         {
-            var dtListaParaElGrid = gDao.obtenerVacacionesUsuarios();
-          
-           
-           
-            
 
 
             return gDao.obtenerVacacionesUsuarios();
+        }
+
+
+        public void aprobarVacaciones(int id)
+        {
+            gDao.aprobarVacaciones(id);
+        }
+
+        public void denegarVacaciones(int id, int id_user, DateTime dia, string comentario)
+        {
+            var nombre_admin = UserLoginCache.FirstName + " " + UserLoginCache.LastName;
+            gDao.denegarVacaciones(id,id_user,dia,UserLoginCache.IdUser,nombre_admin,comentario);
         }
 
 

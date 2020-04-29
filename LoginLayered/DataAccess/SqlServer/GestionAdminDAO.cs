@@ -33,6 +33,57 @@ namespace DataAccess.SqlServer
             }
         }
 
+        public void aprobarVacaciones(int id)
+        {
+
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new SqlCommand("aprobarVacaciones", connection))
+                {
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id",id);
+                    cmd.ExecuteNonQuery();
+
+
+
+
+                }
+
+
+            }
+        }
+
+        public void denegarVacaciones(int id,int id_user, DateTime dia, int id_admin, string nombre_admin,string comentario)
+        {
+
+
+            using (var connection = GetConnection())
+            {
+                connection.Open();
+                using (var cmd = new SqlCommand("denegarVacaciones", connection))
+                {
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@id_user", id_user);
+                    cmd.Parameters.AddWithValue("@dia", dia);
+                    cmd.Parameters.AddWithValue("@id_admin", id_admin);
+                    cmd.Parameters.AddWithValue("@nombre_admin", nombre_admin);
+                    cmd.Parameters.AddWithValue("@comentario", comentario);
+
+                    cmd.ExecuteNonQuery();
+
+
+
+
+                }
+
+
+            }
+        }
 
     }
 }

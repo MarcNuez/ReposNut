@@ -4,3 +4,9 @@ C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Comun\obj\Debug\Com
 C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Comun\obj\Debug\Comun.dll
 C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Comun\obj\Debug\Comun.pdb
 C:\Users\marcn\OneDrive\Escritorio\VisualStudio\LoginLayered\Comun\obj\Debug\Comun.csprojAssemblyReference.cache
+D:\ProyectDam\LoginLayered\Comun\bin\Debug\Comun.dll
+D:\ProyectDam\LoginLayered\Comun\bin\Debug\Comun.pdb
+D:\ProyectDam\LoginLayered\Comun\obj\Debug\Comun.csprojAssemblyReference.cache
+D:\ProyectDam\LoginLayered\Comun\obj\Debug\Comun.csproj.CoreCompileInputs.cache
+D:\ProyectDam\LoginLayered\Comun\obj\Debug\Comun.dll
+D:\ProyectDam\LoginLayered\Comun\obj\Debug\Comun.pdb
