@@ -76,6 +76,7 @@
     <Compile Include="Comandos\AbrirVentanaCommand.cs" />
     <Compile Include="Comandos\ParamCommand.cs" />
     <Compile Include="Comandos\RelayCommand.cs" />
+    <Compile Include="Model\DiasElegidosModel.cs" />
     <Compile Include="ViewModel\AusenciasViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
@@ -95,6 +96,9 @@
     </Compile>
     <Compile Include="View\UserControls\AusenciasView.xaml.cs">
       <DependentUpon>AusenciasView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\CalendarControl.xaml.cs">
+      <DependentUpon>CalendarControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\VacacionesView.xaml.cs">
       <DependentUpon>VacacionesView.xaml</DependentUpon>
@@ -148,6 +152,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\UserControls\CalendarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UserControls\VacacionesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -155,7 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\calendarIcon.png" />

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\App.xaml
-6-45191541
+7-88830522
 
-19779320498
+21-1333091438
 17-581402661
-View\EditarPerfilesView.xaml;View\GestionAdminView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\VacacionesView.xaml;
+View\EditarPerfilesView.xaml;View\GestionAdminView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\VacacionesView.xaml;
 
-False
+True
 

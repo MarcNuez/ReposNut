@@ -8,7 +8,8 @@
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
         mc:Ignorable="d"
-        Background="White" Height="463.712" Width="708.884">
+             d:DesignHeight="450" d:DesignWidth="800"
+        Background="White" >
 
     <UserControl.Resources>
         <vm:AusenciasViewModel x:Key="ausVM"/>
@@ -17,7 +18,7 @@
 
 
 
-    <Grid Margin="2,0,0,0" DataContext="{StaticResource ausVM}">
+    <Grid Margin="0,0,0,0" DataContext="{StaticResource ausVM}" Background="#FFD42C2C">
         <TextBlock HorizontalAlignment="Left" Margin="50,30,0,0" TextWrapping="Wrap" Text="Nueva Solicitud" VerticalAlignment="Top" Height="26" Width="86"/>
         <Label Content="Tipo:" HorizontalAlignment="Left" Margin="50,85,0,0" VerticalAlignment="Top"/>
         <Label Content="Desde:" HorizontalAlignment="Left" Margin="274,93,0,0" VerticalAlignment="Top"/>

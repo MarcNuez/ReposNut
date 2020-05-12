@@ -1,7 +1,6 @@
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\bin\Debug\GestorDeVacaciones.exe.config
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\bin\Debug\GestorDeVacaciones.exe
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\bin\Debug\GestorDeVacaciones.pdb
-D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\GestorDeVacaciones.csprojAssemblyReference.cache
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\EditarPerfilesView.g.cs
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\GestionAdminView.g.cs
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\LoginView.g.cs
@@ -33,3 +32,5 @@ D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\AusenciasView.baml
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\VacacionesView.g.cs
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\VacacionesView.baml
+D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\CalendarControl.g.cs
+D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\CalendarControl.baml

@@ -42,6 +42,6 @@
             </StackPanel>
         </Grid>
         <Grid Height="30" VerticalAlignment="Bottom" Background="#FF80E8FF" Margin="211,0,0,0"/>
-        <ContentControl Content="{Binding VistaSeleccionada}" Margin="211,45,0,30"/>
+        <ContentControl Content="{Binding VistaSeleccionada}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"   Margin="211,45,0,30" />
     </Grid>
 </Window>

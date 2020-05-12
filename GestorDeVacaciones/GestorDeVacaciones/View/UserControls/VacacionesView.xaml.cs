@@ -24,5 +24,13 @@ namespace GestorDeVacaciones.View.UserControls
         {
             InitializeComponent();
         }
+
+
+       
+
+
+
+
+
     }
 }

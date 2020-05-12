@@ -4,10 +4,29 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestorDeVacaciones.View.UserControls"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800" Background="White">
+             mc:Ignorable="d" Background="White" d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="305,132,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dias pendientes:" HorizontalAlignment="Left" Margin="36,26,0,0" VerticalAlignment="Top"/>
+        <Button Content="Solicitar" Margin="64,0,0,43" Height="57" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="172"/>
+        <Label Content="30" HorizontalAlignment="Left" Margin="136,10,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="4" Margin="138,54,0,0" Stroke="Black" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-43.634"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Label Content="30" HorizontalAlignment="Left" Margin="173,51,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <local:CalendarControl Margin="338,77,29,43"/>
+        <Button Content="Individual" Margin="338,39,0,0" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="105"/>
+        <Button Content="Grupal" Margin="448,39,0,0" Height="33" VerticalAlignment="Top" HorizontalAlignment="Left" Width="105"/>
+        <ListBox HorizontalAlignment="Left" Height="194" Margin="36,130,0,0" VerticalAlignment="Top" Width="242"/>
+        <Button Content="&gt;" Margin="753,39,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="18" Padding="0"/>
+        <Button Content="&lt;" Margin="687,39,0,0" Height="27" VerticalAlignment="Top" HorizontalAlignment="Left" Width="18" Padding="0"/>
+        <Label Content="{Binding AñoSeleccionado}" HorizontalAlignment="Left" Margin="710,51,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </UserControl>
