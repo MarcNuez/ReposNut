@@ -13,7 +13,7 @@ namespace DataAccess
         public ConnectionToSQL()
         {
             //Pon aqui tu server
-            connectionString = "Server=(localdb)\\marcn;DataBase= ProyectoDam;integrated security = true";
+            connectionString = "Server=tcp:damproyecto.database.windows.net,1433;Initial Catalog=ProyectoDam;Persist Security Info=False;User ID=marcymarta;Password=Proyecto20;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         }
 
         protected SqlConnection GetConnection()

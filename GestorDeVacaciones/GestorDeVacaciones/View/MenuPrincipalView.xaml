@@ -1,0 +1,47 @@
+﻿<Window x:Class="GestorDeVacaciones.View.MenuPrincipalView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorDeVacaciones.View"
+        xmlns:us="clr-namespace:GestorDeVacaciones.View.UserControls"
+        xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
+       
+        mc:Ignorable="d"
+        Title="MenuPrincipalView" Height="800" Width="1200" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+
+     
+        <DataTemplate DataType="{x:Type vm:AusenciasViewModel}">
+            <us:AusenciasView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:VacacionesViewModel}">
+            <us:VacacionesView/>
+        </DataTemplate>
+
+        <vm:MenuPrincipalViewModel x:Key="menuVM"/>
+
+    </Window.Resources>
+
+    
+
+
+
+
+
+
+    <Grid Margin="0,0,0,0" DataContext="{StaticResource menuVM}">
+        <Grid Height="45" VerticalAlignment="Top" Background="#FF0672F3" Margin="211,0,0,0">
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Margin="33,15,0,15"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Width="211" Background="#FF0672F3">
+            <StackPanel HorizontalAlignment="Left" Height="184" Margin="10,142,0,0" VerticalAlignment="Top" Width="201">
+                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="VacacionesView" Content="Vacaciones" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
+                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="AusenciasView" Content="Ausencias" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
+                <Button Content="Fichar" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
+            </StackPanel>
+        </Grid>
+        <Grid Height="30" VerticalAlignment="Bottom" Background="#FF80E8FF" Margin="211,0,0,0"/>
+        <ContentControl Content="{Binding VistaSeleccionada}" Margin="211,45,0,30"/>
+    </Grid>
+</Window>
