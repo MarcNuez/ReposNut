@@ -18,7 +18,7 @@
 
 
 
-    <Grid Margin="0,0,0,0" DataContext="{StaticResource ausVM}" Background="#FFD42C2C">
+    <Grid Margin="0,0,0,0" DataContext="{StaticResource ausVM}" >
         <TextBlock HorizontalAlignment="Left" Margin="50,30,0,0" TextWrapping="Wrap" Text="Nueva Solicitud" VerticalAlignment="Top" Height="26" Width="86"/>
         <Label Content="Tipo:" HorizontalAlignment="Left" Margin="50,85,0,0" VerticalAlignment="Top"/>
         <Label Content="Desde:" HorizontalAlignment="Left" Margin="274,93,0,0" VerticalAlignment="Top"/>

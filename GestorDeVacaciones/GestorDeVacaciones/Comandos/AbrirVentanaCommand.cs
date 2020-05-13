@@ -39,6 +39,10 @@ namespace GestorDeVacaciones.Comandos
             else if(parameter.ToString() == "AusenciasView")
             {
                 viewModel.VistaSeleccionada = new AusenciasViewModel();
+            }else if (parameter.ToString() == "GestorAdminView")
+            {
+                viewModel.VistaSeleccionada = new ();
+
             }
         }
     }

@@ -82,11 +82,11 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MenuPrincipalViewModel.cs" />
     <Compile Include="ViewModel\VacacionesViewModel.cs" />
+    <Compile Include="View\CalendarioGrupalView.xaml.cs">
+      <DependentUpon>CalendarioGrupalView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\EditarPerfilesView.xaml.cs">
       <DependentUpon>EditarPerfilesView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\GestionAdminView.xaml.cs">
-      <DependentUpon>GestionAdminView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -99,6 +99,9 @@
     </Compile>
     <Compile Include="View\UserControls\CalendarControl.xaml.cs">
       <DependentUpon>CalendarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\GestorAdminView.xaml.cs">
+      <DependentUpon>GestorAdminView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\VacacionesView.xaml.cs">
       <DependentUpon>VacacionesView.xaml</DependentUpon>
@@ -132,11 +135,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\EditarPerfilesView.xaml">
+    <Page Include="View\CalendarioGrupalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\GestionAdminView.xaml">
+    <Page Include="View\EditarPerfilesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -153,6 +156,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\UserControls\CalendarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\GestorAdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

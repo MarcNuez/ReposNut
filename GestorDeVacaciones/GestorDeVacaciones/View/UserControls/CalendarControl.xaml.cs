@@ -1,5 +1,8 @@
-﻿using System;
+﻿using GestorDeVacaciones.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -19,23 +22,63 @@ namespace GestorDeVacaciones.View.UserControls
     /// <summary>
     /// Lógica de interacción para CalendarControl.xaml
     /// </summary>
-    public partial class CalendarControl : UserControl
+    public partial class CalendarControl : UserControl, INotifyPropertyChanged
     {
         public CalendarControl()
         {
             InitializeComponent();
         }
 
-        int mesSeleccionado = DateTime.Now.Month;
-        int añoSeleccionado = DateTime.Now.Year;
+        private ObservableCollection<DiasElegidosModel> _listaDiasSeleccionados;
+        public ObservableCollection<DiasElegidosModel> ListaDiasSeleccionados
+        {
+            get
+            {
+                return _listaDiasSeleccionados;
+            }
+            set
+            {
+                _listaDiasSeleccionados = value;
+                OnPropertyChanged("ListaDiasSeleccionados")
+                ;
+            }
+        }
+
+
+        public int AñoSeleccionado
+        {
+            get { return añoSeleccionado; }
+            set
+            {
+                añoSeleccionado = value;
+                cargarFechasFormatosYCalendar();
+                OnPropertyChanged("AñoSeleccionado");
+            }
+        }
+
+
+
+
+        private int mesSeleccionado = DateTime.Now.Month;
+        private int añoSeleccionado = DateTime.Now.Year;
         private DateTimeFormatInfo formatDate;
         private CultureInfo es;
         private TextInfo inf;
         private int diasTotalMes;
         private string primerDiaDelMes;
 
+        #region propertychanged
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged(string name)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+        #endregion
+
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+
+            ListaDiasSeleccionados = new ObservableCollection<DiasElegidosModel>();
             es = new CultureInfo("Es-Es");
             inf = es.TextInfo;
             formatDate = es.DateTimeFormat;
@@ -95,12 +138,26 @@ namespace GestorDeVacaciones.View.UserControls
 
             var diasAnteriores = col;
 
-
+            //Dias del mes que se pueden clickar
             for (int i = 1; i <= diasTotalMes; i++)
             {
                 var lb = new Label();
                 lb.Content = i.ToString();
                 lb.MouseLeftButtonUp += click_calendar;
+                var item =  _listaDiasSeleccionados.FirstOrDefault(x => x.Dia == i && x.Mes == mesSeleccionado && x.Año == añoSeleccionado);
+
+                if (item!=null)
+                {
+                    lb.Background = Brushes.MediumTurquoise;
+                    lb.Foreground = Brushes.White;
+                }
+                else
+                {
+                    lb.Background = Brushes.White;
+                    lb.Foreground = col == 6 ? Brushes.Red:Brushes.Black;
+                }
+
+
                 if (col == 7)
                 {
                     col = 0;
@@ -158,6 +215,15 @@ namespace GestorDeVacaciones.View.UserControls
 
 
         }
+        public void refesh()
+        {
+            cargarNumerosCalendar();
+        }
+
+
+
+
+
 
         private void click_calendar(object sender, MouseButtonEventArgs e)
         {
@@ -169,13 +235,21 @@ namespace GestorDeVacaciones.View.UserControls
             if (color == Brushes.MediumTurquoise)
             {
                 celda.Background = Brushes.White;
-                celda.Foreground = Brushes.Black;
-
+                celda.Foreground = celda.Foreground == Brushes.Red ? Brushes.Red : Brushes.Black;
+                //Elimina de la lista el dia deseleccionado
+                var itemToRemove = ListaDiasSeleccionados.SingleOrDefault(r => r.Dia == Int32.Parse(celda.Content.ToString())
+                                    && r.Mes == mesSeleccionado && r.Año == añoSeleccionado);
+                if (itemToRemove != null)
+                    _listaDiasSeleccionados.Remove(itemToRemove);
+                restarDias(sender, e);
             }
-            else
+            else if(color == Brushes.White)
             {
                 celda.Background = Brushes.MediumTurquoise;
-                celda.Foreground = Brushes.White;
+                celda.Foreground = celda.Foreground == Brushes.Red ? Brushes.Red : Brushes.White;
+                _listaDiasSeleccionados.Add(new DiasElegidosModel(Int32.Parse(celda.Content.ToString()), mesSeleccionado, añoSeleccionado));
+                
+                sumarDias(sender, e);
             }
 
 
@@ -191,7 +265,7 @@ namespace GestorDeVacaciones.View.UserControls
             }
             else
             {
-                añoSeleccionado++;
+                AñoSeleccionado++;
                 mesSeleccionado = 1;
             }
             cargarFechasFormatosYCalendar();
@@ -207,13 +281,42 @@ namespace GestorDeVacaciones.View.UserControls
             else
             {
 
-                añoSeleccionado--;
+                AñoSeleccionado--;
                 mesSeleccionado = 12;
             }
 
             cargarFechasFormatosYCalendar();
 
         }
+
+        #region eventos enrutados para pasar de usercontrol hijo a padre
+        public static readonly RoutedEvent OnClickedrestarDias
+            = EventManager.RegisterRoutedEvent("restarDias", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(CalendarControl));
+        public static readonly RoutedEvent OnClickedsumarDias
+    = EventManager.RegisterRoutedEvent("sumarDias", RoutingStrategy.Direct, typeof(RoutedEventHandler), typeof(CalendarControl));
+
+        // expose our event
+        public event RoutedEventHandler OnClickedrestarDias_Clicked
+        {
+            add { AddHandler(OnClickedrestarDias, value); }
+            remove { RemoveHandler(OnClickedrestarDias, value); }
+        }
+
+        public event RoutedEventHandler OnClickedsumarDias_Clicked
+        {
+            add { AddHandler(OnClickedsumarDias, value); }
+            remove { RemoveHandler(OnClickedsumarDias, value); }
+        }
+
+        private void restarDias(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(OnClickedrestarDias));
+        }
+        private void sumarDias(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(OnClickedsumarDias));
+        }
+        #endregion
 
     }
 }

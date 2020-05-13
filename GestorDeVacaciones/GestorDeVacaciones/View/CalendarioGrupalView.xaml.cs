@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GestorDeVacaciones.View
 {
     /// <summary>
-    /// Lógica de interacción para GestionAdminView.xaml
+    /// Lógica de interacción para CalendarioGrupalView.xaml
     /// </summary>
-    public partial class GestionAdminView : Window
+    public partial class CalendarioGrupalView : Window
     {
-        public GestionAdminView()
+        public CalendarioGrupalView()
         {
             InitializeComponent();
         }

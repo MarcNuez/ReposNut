@@ -34,3 +34,6 @@ D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\VacacionesView.baml
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\CalendarControl.g.cs
 D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\UserControls\CalendarControl.baml
+D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\GestorDeVacaciones.csprojAssemblyReference.cache
+D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\CalendarioGrupalView.g.cs
+D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\View\CalendarioGrupalView.baml
