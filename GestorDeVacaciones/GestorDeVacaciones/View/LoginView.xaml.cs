@@ -26,9 +26,7 @@ namespace GestorDeVacaciones.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MenuPrincipalView mp = new MenuPrincipalView();
-            mp.Show();
-            this.Hide();
+           
         }
     }
 }

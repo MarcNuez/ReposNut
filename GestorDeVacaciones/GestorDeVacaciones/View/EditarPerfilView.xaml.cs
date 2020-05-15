@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace GestorDeVacaciones.View
 {
     /// <summary>
-    /// Lógica de interacción para EditarPerfilesView.xaml
+    /// Lógica de interacción para EditarPerfilView.xaml
     /// </summary>
-    public partial class EditarPerfilesView : Window
+    public partial class EditarPerfilView : Window
     {
-        public EditarPerfilesView()
+        public EditarPerfilView()
         {
             InitializeComponent();
         }
