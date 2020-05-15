@@ -14,7 +14,7 @@ namespace GestorDeVacaciones.ViewModel
 
 
 
-
+        
 
 
 
@@ -36,16 +36,7 @@ namespace GestorDeVacaciones.ViewModel
         private void loginComando()
         {
 
-            var validLogin = true;
-            if (validLogin)
-            {
-                MenuPrincipalView mp = new MenuPrincipalView();
-                mp.Show();
-            }
-            else
-            {
-
-            }
+            
 
            
             

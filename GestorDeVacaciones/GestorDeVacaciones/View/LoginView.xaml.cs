@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestorDeVacaciones.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,9 +25,32 @@ namespace GestorDeVacaciones.View
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+      
+
+        private void Login(object sender, RoutedEventArgs e)
         {
-           
+            var validLogin = false;
+
+            using (var db = new ContextoBBDD())
+            {
+                //return db.User.Find(userId);
+                //db.SaveChanges();
+            }
+
+            if (txtUsuario.Text == "admin" && txtContraseña.Password == "admin")
+                {
+                    validLogin = true;
+                }
+
+            if (validLogin)
+            {
+                MenuPrincipalView mp = new MenuPrincipalView();
+                mp.Show();
+            }
+            else
+            {
+
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ namespace GestorDeVacaciones.Model
         public string Rol { get; set; }
 
         public string UrlImage { get; set; }
-
+    
 
 
 
