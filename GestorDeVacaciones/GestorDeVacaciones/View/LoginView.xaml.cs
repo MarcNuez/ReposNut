@@ -1,4 +1,6 @@
 ﻿using GestorDeVacaciones.Data;
+using GestorDeVacaciones.Model;
+using GestorDeVacaciones.Model.Cache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,31 +27,41 @@ namespace GestorDeVacaciones.View
             InitializeComponent();
         }
 
-      
+
 
         private void Login(object sender, RoutedEventArgs e)
         {
-            var validLogin = false;
 
+            var user = new UserModel();
             using (var db = new ContextoBBDD())
             {
-                //return db.User.Find(userId);
-                //db.SaveChanges();
+                user = db.Usuarios
+                      .Where(x => x.UserName == txtUsuario.Text && x.Password == txtContraseña.Password)
+                      .FirstOrDefault();
+
             }
 
-            if (txtUsuario.Text == "admin" && txtContraseña.Password == "admin")
-                {
-                    validLogin = true;
-                }
 
-            if (validLogin)
+            if (user != null)
             {
+              
+
+                UserLoginCache.Id = user.Id;
+                UserLoginCache.UserName = user.UserName;
+                UserLoginCache.Password = user.Password;
+                UserLoginCache.Nombre = user.Nombre;
+                UserLoginCache.Apellidos = user.Apellidos;
+                UserLoginCache.Rol = user.Rol;
+                UserLoginCache.Email = user.Email;
+                UserLoginCache.UrlImage = user.UrlImage;
+
                 MenuPrincipalView mp = new MenuPrincipalView();
+
                 mp.Show();
             }
             else
             {
-
+                MessageBox.Show("Usuario o contraseña incorrectos");
             }
         }
     }

@@ -21,27 +21,10 @@ namespace GestorDeVacaciones.ViewModel
 
 
 
-        private ICommand _loguear;
-        public ICommand Loguear
-        {
-            get
-            {
-                if (_loguear == null)
-                    _loguear = new RelayCommand(new Action(loginComando));
-                return _loguear;
-            }
-        }
+       
 
 
-        private void loginComando()
-        {
-
-            
-
-           
-            
-        }
-
+      
 
 
 

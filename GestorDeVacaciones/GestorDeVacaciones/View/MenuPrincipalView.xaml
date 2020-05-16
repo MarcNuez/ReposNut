@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GestorDeVacaciones.View"
         xmlns:us="clr-namespace:GestorDeVacaciones.View.UserControls"
         xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
-       
+        xmlns:conv="clr-namespace:GestorDeVacaciones.Converters"
         mc:Ignorable="d"
         Title="MenuPrincipalView" Height="800" Width="1200" WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -23,7 +23,7 @@
         </DataTemplate>
 
         <vm:MenuPrincipalViewModel x:Key="menuVM"/>
-
+        <conv:ImagenNullConverter x:Key="converterimagen"/>
     </Window.Resources>
 
 
@@ -38,13 +38,29 @@
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Margin="33,15,0,15"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Width="211" Background="#FF0672F3">
-            <StackPanel HorizontalAlignment="Left" Height="258" Margin="10,211,0,0" VerticalAlignment="Top" Width="201">
+            <Ellipse Height="126" Width="127" Margin="42,15,42,0" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="#FF080707">
+                <Ellipse.Effect>
+                    <DropShadowEffect Direction="285" BlurRadius="27" Color="#FF59594C"/>
+                </Ellipse.Effect>
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="{Binding UrlImage,Converter={StaticResource converterimage}}" Stretch="Fill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock x:Name="lol" HorizontalAlignment="Center" Margin="0,158,0,0" TextWrapping="Wrap" Text="{Binding Nombre}" VerticalAlignment="Top" Width="80"/>
+            <TextBlock HorizontalAlignment="Center" Margin="66,210,65,0" TextWrapping="Wrap" Text="{Binding Rol}" VerticalAlignment="Top" Width="80"/>
+
+
+
+            <StackPanel HorizontalAlignment="Left" Height="258" Margin="10,258,0,0" VerticalAlignment="Top" Width="201">
+
+
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="VacacionesView" Content="Vacaciones" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="AusenciasView" Content="Ausencias" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
                 <Button Content="Fichar" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="GestorAdminView" Content="Gestion Admin" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
 
             </StackPanel>
+            
         </Grid>
         <Grid Height="30" VerticalAlignment="Bottom" Background="#FF80E8FF" Margin="211,0,0,0"/>
         <ContentControl Content="{Binding VistaSeleccionada}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"   Margin="211,45,0,30" />

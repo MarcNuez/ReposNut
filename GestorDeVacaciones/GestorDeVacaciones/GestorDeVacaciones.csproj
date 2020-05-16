@@ -154,12 +154,14 @@
     <Compile Include="Comandos\AbrirVentanaCommand.cs" />
     <Compile Include="Comandos\ParamCommand.cs" />
     <Compile Include="Comandos\RelayCommand.cs" />
+    <Compile Include="Converters\ImagenNullConverter.cs" />
     <Compile Include="Data\ContextoBBDD.cs" />
     <Compile Include="Migrations\202005151704118_Initial.cs" />
     <Compile Include="Migrations\202005151704118_Initial.designer.cs">
       <DependentUpon>202005151704118_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Cache\UserLoginCache.cs" />
     <Compile Include="Model\DiasElegidosModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="ViewModel\AusenciasViewModel.cs" />
@@ -257,7 +259,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Recursos\avatarnull.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\calendarIcon.png" />
   </ItemGroup>
