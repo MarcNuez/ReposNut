@@ -44,7 +44,7 @@ namespace GestorDeVacaciones.View
 
             if (user != null)
             {
-              
+
 
                 UserLoginCache.Id = user.Id;
                 UserLoginCache.UserName = user.UserName;

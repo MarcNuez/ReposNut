@@ -81,18 +81,9 @@ namespace GestorDeVacaciones.View.UserControls
 
             using (var db = new ContextoBBDD())
             {
-
-                VacacionesElegidasModel nuevasVacas = new VacacionesElegidasModel() {
-
-
-                    UserModelId = UserLoginCache.Id,
-                    DiasElegidos = listaDeDias,
-                    
-                    
-                    
                 
-                };
-                db.VacacionesElegidas.Add(nuevasVacas);
+                db.DiasElegidos.AddRange(listaDeDias);
+                
                 db.SaveChanges();
 
 

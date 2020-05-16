@@ -1,4 +1,6 @@
-﻿using GestorDeVacaciones.Model;
+﻿using GestorDeVacaciones.Data;
+using GestorDeVacaciones.Model;
+using GestorDeVacaciones.Model.Cache;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -139,23 +141,50 @@ namespace GestorDeVacaciones.View.UserControls
             var diasAnteriores = col;
 
             //Dias del mes que se pueden clickar
+
+
+
             for (int i = 1; i <= diasTotalMes; i++)
             {
                 var lb = new Label();
                 lb.Content = i.ToString();
                 lb.MouseLeftButtonUp += click_calendar;
-                var item =  _listaDiasSeleccionados.FirstOrDefault(x => x.Dia == i && x.Mes == mesSeleccionado && x.Año == añoSeleccionado);
+                var item = _listaDiasSeleccionados.FirstOrDefault(x => x.Dia == i && x.Mes == mesSeleccionado && x.Año == añoSeleccionado);
 
-                if (item!=null)
+
+                using (var db = new ContextoBBDD())
                 {
-                    lb.Background = Brushes.MediumTurquoise;
-                    lb.Foreground = Brushes.White;
+                    var diaYaElegido = db.DiasElegidos.Where(x => x.Dia == i
+                   && x.Mes == mesSeleccionado
+                   && x.Año == añoSeleccionado
+                   && x.UserModelId == UserLoginCache.Id).FirstOrDefault();
+
+                    if (diaYaElegido != null)
+                    {
+                        lb.Background = Brushes.OrangeRed;
+                        lb.Foreground = Brushes.White;
+                    }
+                    else
+                    {
+                        if (item != null)
+                        {
+                            lb.Background = Brushes.MediumTurquoise;
+                            lb.Foreground = Brushes.White;
+                        }
+                        else
+                        {
+                            lb.Background = Brushes.White;
+                            lb.Foreground = col == 6 ? Brushes.Red : Brushes.Black;
+                        }
+                    }
                 }
-                else
-                {
-                    lb.Background = Brushes.White;
-                    lb.Foreground = col == 6 ? Brushes.Red:Brushes.Black;
-                }
+
+
+
+
+
+
+
 
 
                 if (col == 7)
@@ -243,13 +272,27 @@ namespace GestorDeVacaciones.View.UserControls
                     _listaDiasSeleccionados.Remove(itemToRemove);
                 restarDias(sender, e);
             }
-            else if(color == Brushes.White)
+            else if (color == Brushes.White)
             {
                 celda.Background = Brushes.MediumTurquoise;
                 celda.Foreground = celda.Foreground == Brushes.Red ? Brushes.Red : Brushes.White;
-                _listaDiasSeleccionados.Add(new DiasElegidosModel(Int32.Parse(celda.Content.ToString()), mesSeleccionado, añoSeleccionado));
-                
+                _listaDiasSeleccionados.Add(new DiasElegidosModel()
+                {
+                    Dia = Int32.Parse(celda.Content.ToString()),
+                    Mes = mesSeleccionado,
+                    Año = añoSeleccionado,
+                    UserModelId = UserLoginCache.Id
+
+
+
+
+
+                });
+
                 sumarDias(sender, e);
+            }else if (color == Brushes.OrangeRed)
+            {
+                MessageBox.Show("Dia pendiente de ser aceptado, Desea eliminar la solicitud?");
             }
 
 

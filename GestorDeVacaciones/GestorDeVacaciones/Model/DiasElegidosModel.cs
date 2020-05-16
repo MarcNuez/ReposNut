@@ -10,6 +10,9 @@ namespace GestorDeVacaciones.Model
     public class DiasElegidosModel 
     {
         public int Id { get; set; }
+
+        public UserModel Usuario { get; set; }
+        public int UserModelId { get; set; }
         public int Dia { get; set; }
         public int Mes { get; set; }
 
@@ -22,12 +25,7 @@ namespace GestorDeVacaciones.Model
                 return Dia.ToString() + "/" + Mes.ToString() + "/" + Año.ToString(); } }
 
 
-        public DiasElegidosModel(int dia,int mes, int año)
-        {
-            Dia = dia;
-            Mes = mes;
-            Año = año;
-        }
+        
 
         
 

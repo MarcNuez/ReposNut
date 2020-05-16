@@ -13,7 +13,7 @@ namespace GestorDeVacaciones.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202005161547362_Inicial"; }
+            get { return "202005162050528_Inicial"; }
         }
         
         string IMigrationMetadata.Source

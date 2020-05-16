@@ -156,9 +156,9 @@
     <Compile Include="Comandos\RelayCommand.cs" />
     <Compile Include="Converters\ImagenNullConverter.cs" />
     <Compile Include="Data\ContextoBBDD.cs" />
-    <Compile Include="Migrations\202005161547362_Inicial.cs" />
-    <Compile Include="Migrations\202005161547362_Inicial.designer.cs">
-      <DependentUpon>202005161547362_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\202005162050528_Inicial.cs" />
+    <Compile Include="Migrations\202005162050528_Inicial.designer.cs">
+      <DependentUpon>202005162050528_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AusenciasModel.cs" />
@@ -167,7 +167,6 @@
     <Compile Include="Model\DiasPendientesModel.cs" />
     <Compile Include="Model\TipoAusenciaModel.cs" />
     <Compile Include="Model\UserModel.cs" />
-    <Compile Include="Model\VacacionesElegidasModel.cs" />
     <Compile Include="ViewModel\AusenciasViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\GestorAdminViewModel.cs" />
@@ -213,8 +212,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202005161547362_Inicial.resx">
-      <DependentUpon>202005161547362_Inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005162050528_Inicial.resx">
+      <DependentUpon>202005162050528_Inicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

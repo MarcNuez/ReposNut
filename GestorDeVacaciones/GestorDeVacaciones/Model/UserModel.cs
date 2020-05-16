@@ -20,9 +20,11 @@ namespace GestorDeVacaciones.Model
 
         public DiasPendientesModel DiasPendientes { get; set; }
 
+        public virtual List<DiasElegidosModel> DiasElegidos { get; set; }
+
         public virtual List<AusenciasModel> Ausencias { get; set; }
 
-        public virtual List<VacacionesElegidasModel> VacacionesElegidas { get; set; }
+        
 
 
 

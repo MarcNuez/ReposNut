@@ -21,13 +21,13 @@ namespace GestorDeVacaciones.ViewModel
 
 		public VacacionesViewModel()
 		{
-			
+
 			using (var db = new ContextoBBDD())
 			{
 				var diasquequedan = db.Usuarios.Where(x => x.Id == UserLoginCache.Id).Select(d => d.DiasPendientes.DiasQueMeQuedan).FirstOrDefault();
 				_diasQueQuedan = diasquequedan;
 			}
-				
+
 		}
 
 
