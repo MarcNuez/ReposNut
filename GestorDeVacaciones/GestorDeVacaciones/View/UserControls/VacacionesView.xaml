@@ -12,7 +12,7 @@
 
     <Grid>
         <Label Content="Dias pendientes:" HorizontalAlignment="Left" Margin="36,26,0,0" VerticalAlignment="Top"/>
-        <Button Content="Solicitar" Margin="64,0,0,43" Height="57" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="172" Click="solicitarVacas"/>
+        <Button Command="" Content="Solicitar" Margin="64,0,0,43" Height="57" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="172" Click="solicitarVacas"/>
         <Label x:Name="diasPendientes" Content="{Binding DiasQueQuedan,Mode=TwoWay}" HorizontalAlignment="Left" Margin="136,10,0,0" VerticalAlignment="Top" FontSize="36"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="4" Margin="138,54,0,0" Stroke="Black" VerticalAlignment="Top" Width="84" RenderTransformOrigin="0.5,0.5">
             <Rectangle.RenderTransform>

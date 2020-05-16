@@ -9,11 +9,13 @@ namespace GestorDeVacaciones.Model
 {
     public class DiasElegidosModel 
     {
-
+        public int Id { get; set; }
         public int Dia { get; set; }
         public int Mes { get; set; }
 
         public int Año { get; set; }
+
+        public bool Aprobado { get; set; }
 
         public string diaFormato { get {
 

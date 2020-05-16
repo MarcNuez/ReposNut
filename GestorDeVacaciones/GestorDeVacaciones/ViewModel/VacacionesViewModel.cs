@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestorDeVacaciones.Data;
+using GestorDeVacaciones.Model.Cache;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -19,7 +21,13 @@ namespace GestorDeVacaciones.ViewModel
 
 		public VacacionesViewModel()
 		{
-			_diasQueQuedan = 30;
+			
+			using (var db = new ContextoBBDD())
+			{
+				var diasquequedan = db.Usuarios.Where(x => x.Id == UserLoginCache.Id).Select(d => d.DiasPendientes.DiasQueMeQuedan).FirstOrDefault();
+				_diasQueQuedan = diasquequedan;
+			}
+				
 		}
 
 

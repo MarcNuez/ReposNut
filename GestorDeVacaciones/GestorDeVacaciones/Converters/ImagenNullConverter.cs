@@ -16,7 +16,7 @@ namespace GestorDeVacaciones.Converters
 
             if (value == null)
             {
-                return "avatarnull.jpg";
+                return "/Recursos/avatarnull.jpg";
             }
             else
             {

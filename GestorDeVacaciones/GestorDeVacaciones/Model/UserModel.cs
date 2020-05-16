@@ -17,7 +17,13 @@ namespace GestorDeVacaciones.Model
         public string Rol { get; set; }
 
         public string UrlImage { get; set; }
-    
+
+        public DiasPendientesModel DiasPendientes { get; set; }
+
+        public virtual List<AusenciasModel> Ausencias { get; set; }
+
+        public virtual List<VacacionesElegidasModel> VacacionesElegidas { get; set; }
+
 
 
 

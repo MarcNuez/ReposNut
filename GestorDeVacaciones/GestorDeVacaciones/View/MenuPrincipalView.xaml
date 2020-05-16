@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GestorDeVacaciones.View"
         xmlns:us="clr-namespace:GestorDeVacaciones.View.UserControls"
         xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
-        xmlns:conv="clr-namespace:GestorDeVacaciones.Converters"
+        xmlns:conver="clr-namespace:GestorDeVacaciones.Converters"
         mc:Ignorable="d"
         Title="MenuPrincipalView" Height="800" Width="1200" WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -23,7 +23,7 @@
         </DataTemplate>
 
         <vm:MenuPrincipalViewModel x:Key="menuVM"/>
-        <conv:ImagenNullConverter x:Key="converterimagen"/>
+        <conver:ImagenNullConverter x:Key="converterimagen"/>
     </Window.Resources>
 
 
@@ -43,7 +43,7 @@
                     <DropShadowEffect Direction="285" BlurRadius="27" Color="#FF59594C"/>
                 </Ellipse.Effect>
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="{Binding UrlImage,Converter={StaticResource converterimage}}" Stretch="Fill"/>
+                    <ImageBrush ImageSource="{Binding UrlImage, Converter={StaticResource converterimagen}}" Stretch="Fill"/>
                 </Ellipse.Fill>
             </Ellipse>
             <TextBlock x:Name="lol" HorizontalAlignment="Center" Margin="0,158,0,0" TextWrapping="Wrap" Text="{Binding Nombre}" VerticalAlignment="Top" Width="80"/>
