@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="GestorDeVacaciones.View.UserControls.HorariosView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorDeVacaciones.View"
+        xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800"
+        Background="White" >
+
+    <Grid>
+        <TextBox Margin="51,22,561,385" x:Name="txt_nombre" materialDesign:HintAssist.Hint="Nombre del horario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_nombre_TextChanged"  />
+        <TextBox Margin="51,70,614,333"  x:Name="txt_entrada1" materialDesign:HintAssist.Hint="Primera entrada" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_entrada1_TextChanged" />
+        <TextBox Margin="196,70,480,333" x:Name="txt_salida1" materialDesign:HintAssist.Hint="Primera salida" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_salida1_TextChanged"  />
+        <TextBox Margin="338,70,336,333" x:Name="txt_entrada2" materialDesign:HintAssist.Hint="Segunda entrada" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_entrada2_TextChanged" />
+        <TextBox Margin="469,70,212,333" x:Name="txt_salida2" materialDesign:HintAssist.Hint="Segunda salida" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_salida2_TextChanged"  />
+
+        <Label Content="Horas trabajadas:" Margin="606,88,56,331"/>
+        <Label Content="Horarios" Margin="44,248,656,172"/>
+        <ScrollViewer x:Name="scv_horarios" Margin="44,283,38,21" Background="LightBlue"/>
+        <CheckBox Content="Lunes" x:Name="cb_lunes" HorizontalAlignment="Left" Margin="267,44,0,0" VerticalAlignment="Top" Checked="cb_lunes_Checked"/>
+        <CheckBox Content="Martes" x:Name="cb_martes" HorizontalAlignment="Left" Margin="325,44,0,0" VerticalAlignment="Top" Checked="cb_martes_Checked"/>
+        <CheckBox Content="Miércoles" x:Name="cb_miercoles" HorizontalAlignment="Left" Margin="388,44,0,0" VerticalAlignment="Top" Checked="cb_miercoles_Checked"/>
+        <CheckBox Content="Jueves" x:Name="cb_jueves" HorizontalAlignment="Left" Margin="466,44,0,0" VerticalAlignment="Top" Checked="cb_jueves_Checked"/>
+        <CheckBox Content="Viernes" x:Name="cb_viernes" HorizontalAlignment="Left" Margin="527,44,0,0" VerticalAlignment="Top" Checked="cb_viernes_Checked"/>
+        <CheckBox Content="Sábado" x:Name="cb_sabado" HorizontalAlignment="Left" Margin="593,44,0,0" VerticalAlignment="Top" Checked="cb_sabado_Checked"/>
+        <CheckBox Content="Domingo" x:Name="cb_domingo" HorizontalAlignment="Left" Margin="660,44,0,0" VerticalAlignment="Top" Checked="cb_domingo_Checked"/>
+        <Button Content="Añadir horario" x:Name="btn_anadirHorario" HorizontalAlignment="Left" Margin="51,142,0,0" VerticalAlignment="Top" Width="188" Click="btn_anadirHorario_Click"/>
+        <ComboBox HorizontalAlignment="Left" x:Name="cmb_horario" Margin="51,206,0,0" VerticalAlignment="Top" Width="169" SelectionChanged="cmb_horario_SelectionChanged"/>
+        <Button Content="Eliminar horario" x:Name="btn_eliminarHorario" HorizontalAlignment="Left" Margin="245,202,0,0" VerticalAlignment="Top" Width="188" Click="btn_eliminarHorario_Click"/>
+    </Grid>
+
+</UserControl>

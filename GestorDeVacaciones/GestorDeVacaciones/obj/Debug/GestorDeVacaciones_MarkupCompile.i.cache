@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\
+C:\Users\segur\source\repos\ReposNutPF\GestorDeVacaciones\GestorDeVacaciones\obj\Debug\
 GestorDeVacaciones
 none
 false
 DEBUG;TRACE
-D:\ProyectDam\GestorDeVacaciones\GestorDeVacaciones\App.xaml
-8-485848674
+C:\Users\segur\source\repos\ReposNutPF\GestorDeVacaciones\GestorDeVacaciones\App.xaml
+11384501670
 
-22-1343923389
-17-581402661
-View\CalendarioGrupalView.xaml;View\EditarPerfilesView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\GestorAdminView.xaml;View\UserControls\VacacionesView.xaml;
+28-1874999347
+17-1605421353
+View\CalendarioGrupalView.xaml;View\EditarPerfilesView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\FichajesView.xaml;View\UserControls\FicharView.xaml;View\UserControls\GestorAdminView.xaml;View\UserControls\HorariosView.xaml;View\UserControls\VacacionesView.xaml;
 
 True
 

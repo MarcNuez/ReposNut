@@ -79,6 +79,9 @@
     <Compile Include="Model\DiasElegidosModel.cs" />
     <Compile Include="ViewModel\AusenciasViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\FichajesViewModel.cs" />
+    <Compile Include="ViewModel\FicharViewModel.cs" />
+    <Compile Include="ViewModel\HorariosViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MenuPrincipalViewModel.cs" />
     <Compile Include="ViewModel\VacacionesViewModel.cs" />
@@ -100,8 +103,17 @@
     <Compile Include="View\UserControls\CalendarControl.xaml.cs">
       <DependentUpon>CalendarControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\FichajesView.xaml.cs">
+      <DependentUpon>FichajesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\FicharView.xaml.cs">
+      <DependentUpon>FicharView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\GestorAdminView.xaml.cs">
       <DependentUpon>GestorAdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\HorariosView.xaml.cs">
+      <DependentUpon>HorariosView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\VacacionesView.xaml.cs">
       <DependentUpon>VacacionesView.xaml</DependentUpon>
@@ -159,7 +171,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\UserControls\FichajesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\FicharView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\UserControls\GestorAdminView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\HorariosView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
