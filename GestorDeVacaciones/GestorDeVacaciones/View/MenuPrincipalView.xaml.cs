@@ -1,4 +1,5 @@
-﻿using GestorDeVacaciones.View.UserControls;
+﻿using GestorDeVacaciones.Model.Cache;
+using GestorDeVacaciones.View.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace GestorDeVacaciones.View
         public MenuPrincipalView()
         {
             InitializeComponent();
+           
         }
 
     }

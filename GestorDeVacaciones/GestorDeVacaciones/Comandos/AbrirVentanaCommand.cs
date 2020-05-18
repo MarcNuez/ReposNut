@@ -32,31 +32,16 @@ namespace GestorDeVacaciones.Comandos
 
         public void Execute(object parameter)
         {
-            if (parameter.ToString().Equals("VacacionesView"))
+            if (parameter.ToString() == "VacacionesView")
             {
                 viewModel.VistaSeleccionada = new VacacionesViewModel();
             }
-            else if(parameter.ToString().Equals("AusenciasView"))
+            else if(parameter.ToString() == "AusenciasView")
             {
                 viewModel.VistaSeleccionada = new AusenciasViewModel();
-            }else if (parameter.ToString().Equals("GestorAdminView"))
+            }else if (parameter.ToString() == "GestorAdminView")
             {
-               // viewModel.VistaSeleccionada = new ();
-
-            }
-            else if (parameter.ToString().Equals("FicharView"))
-            {
-                viewModel.VistaSeleccionada = new FicharViewModel();
-
-            }
-            else if (parameter.ToString().Equals("FichajesView"))
-            {
-                viewModel.VistaSeleccionada = new FichajesViewModel();
-
-            }
-            else if (parameter.ToString().Equals("HorariosView"))
-            {
-                viewModel.VistaSeleccionada = new HorariosViewModel();
+                viewModel.VistaSeleccionada = new GestorAdminViewModel();
 
             }
         }

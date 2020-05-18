@@ -1,4 +1,5 @@
 ﻿using GestorDeVacaciones.Comandos;
+using GestorDeVacaciones.Model.Cache;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,18 @@ namespace GestorDeVacaciones.ViewModel
     public class MenuPrincipalViewModel: BaseViewModel
     {
         private BaseViewModel _vistaSeleccionada;
+
+
+        public string Nombre { get; set; } = UserLoginCache.Nombre +" " + UserLoginCache.Apellidos;
+   
+        public string Rol { get; set; } = UserLoginCache.Rol;
+
+
+        public string UrlImage { get; set; } = UserLoginCache.UrlImage;
+
+
+
+
 
         public BaseViewModel VistaSeleccionada
         {

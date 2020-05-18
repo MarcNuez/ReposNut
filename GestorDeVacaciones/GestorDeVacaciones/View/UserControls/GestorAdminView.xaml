@@ -9,8 +9,9 @@
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
     <Grid>
         <DataGrid Margin="40,120,34,31"/>
-        <Button Content="Aprobar" HorizontalAlignment="Left" Margin="647,63,0,0" VerticalAlignment="Top" Width="119" Height="38"/>
+        <Button Content="Aprobar" Margin="0,63,34,0" VerticalAlignment="Top" Height="38" HorizontalAlignment="Right" Width="119"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="40,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
         <Label Content="Buscar por nombre: " HorizontalAlignment="Left" Margin="40,54,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="328,73,0,0" VerticalAlignment="Top" Width="135"/>
     </Grid>
 </UserControl>

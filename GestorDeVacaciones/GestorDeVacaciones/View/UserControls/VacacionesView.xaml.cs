@@ -1,4 +1,7 @@
-﻿using GestorDeVacaciones.ViewModel;
+﻿using GestorDeVacaciones.Data;
+using GestorDeVacaciones.Model;
+using GestorDeVacaciones.Model.Cache;
+using GestorDeVacaciones.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,13 +37,13 @@ namespace GestorDeVacaciones.View.UserControls
         {
             var num = diasPendientes.Content.ToString();
             diasPendientes.Content = Int32.Parse(num) + 1;
-           
+
 
         }
         public void restarDias(object sender, RoutedEventArgs e)
         {
             var num = diasPendientes.Content.ToString();
-            diasPendientes.Content = Int32.Parse(num) -1 ;
+            diasPendientes.Content = Int32.Parse(num) - 1;
         }
 
 
@@ -67,13 +70,25 @@ namespace GestorDeVacaciones.View.UserControls
         private void solicitarVacas(object sender, RoutedEventArgs e)
         {
             var listaDeDias = calControl.ListaDiasSeleccionados.ToList();
-           
+
             var text = "";
-            foreach(var l in listaDeDias)
+            foreach (var l in listaDeDias)
             {
-                text += l.diaFormato+" ";
+                text += l.diaFormato + " ";
             }
-            MessageBox.Show("Has solicitado con exito estos dias: "+text);
+            MessageBox.Show("Has solicitado con exito estos dias: " + text);
+
+
+            using (var db = new ContextoBBDD())
+            {
+                
+                db.DiasElegidos.AddRange(listaDeDias);
+                
+                db.SaveChanges();
+
+
+            }
+
 
             calControl.ListaDiasSeleccionados.Clear();
             calControl.refesh();

@@ -4,10 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GestorDeVacaciones.View"
+        xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="LoginView" Height="500" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid>
+    <Window.Resources>
+        <vm:LoginViewModel x:Key="LogVM"/>
+    </Window.Resources>
+    
+    
+    
+    <Grid DataContext="{StaticResource LogVM}">
         <Rectangle HorizontalAlignment="Left" Height="293" VerticalAlignment="Top" Width="342">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
@@ -29,11 +36,11 @@
         <Grid HorizontalAlignment="Left" Height="217" Margin="46,164,0,0" VerticalAlignment="Top" Width="250">
             <TextBlock Text="Login" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="#FF595959"/>
             <StackPanel HorizontalAlignment="Left" Height="143" Margin="10,48,0,26" VerticalAlignment="Center" Width="230">
-                <TextBox Margin="0,10" materialDesign:HintAssist.Hint="Usuario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
-                <PasswordBox Margin="0,10" materialDesign:HintAssist.Hint="Contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox x:Name="txtUsuario" Margin="0,10" materialDesign:HintAssist.Hint="Usuario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <PasswordBox x:Name="txtContraseña" Margin="0,10" materialDesign:HintAssist.Hint="Contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
             </StackPanel>
         </Grid>
-        <Button Click="Button_Click" Content="Login" HorizontalAlignment="Center" Margin="94,361,94,0" VerticalAlignment="Top" Width="154" Height="42" FontSize="18"  FontFamily="Champagne &amp;"/>
+        <Button Click="Login" Content="Login" HorizontalAlignment="Center" Margin="94,361,94,0" VerticalAlignment="Top" Width="154" Height="42" FontSize="18"  FontFamily="Champagne &amp;"/>
         <TextBlock Text="¿Olvidaste la contraseña?"  HorizontalAlignment="Center" Margin="0,429,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FF8B8B8B"></TextBlock>
 
     </Grid>

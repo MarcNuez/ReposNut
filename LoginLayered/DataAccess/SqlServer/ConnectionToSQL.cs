@@ -15,7 +15,7 @@ namespace DataAccess
             //Pon aqui tu server
             connectionString = "Server=tcp:damproyecto.database.windows.net,1433;Initial Catalog=ProyectoDam;Persist Security Info=False;User ID=marcymarta;Password=Proyecto20;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         }
-
+//holaa
         protected SqlConnection GetConnection()
         {
             return new SqlConnection(connectionString);

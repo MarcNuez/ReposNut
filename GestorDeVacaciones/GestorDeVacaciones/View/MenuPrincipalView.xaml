@@ -1,4 +1,4 @@
-﻿ <Window x:Class="GestorDeVacaciones.View.MenuPrincipalView"
+﻿<Window x:Class="GestorDeVacaciones.View.MenuPrincipalView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,34 +6,27 @@
         xmlns:local="clr-namespace:GestorDeVacaciones.View"
         xmlns:us="clr-namespace:GestorDeVacaciones.View.UserControls"
         xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
-       
+        xmlns:conver="clr-namespace:GestorDeVacaciones.Converters"
         mc:Ignorable="d"
         Title="MenuPrincipalView" Height="800" Width="1200" WindowStartupLocation="CenterScreen">
     <Window.Resources>
 
-     
+
         <DataTemplate DataType="{x:Type vm:AusenciasViewModel}">
             <us:AusenciasView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:VacacionesViewModel}">
             <us:VacacionesView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:GestorAdminViewModel}">
+            <us:GestorAdminView/>
+        </DataTemplate>
 
-        <DataTemplate DataType="{x:Type vm:FicharViewModel}">
-            <us:FicharView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:FichajesViewModel}">
-            <us:FichajesView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type vm:HorariosViewModel}">
-            <us:HorariosView/>
-        </DataTemplate>
-        
         <vm:MenuPrincipalViewModel x:Key="menuVM"/>
-
+        <conver:ImagenNullConverter x:Key="converterimagen"/>
     </Window.Resources>
 
-    
+
 
 
 
@@ -45,15 +38,29 @@
             <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Margin="33,15,0,15"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Width="211" Background="#FF0672F3">
-            <StackPanel HorizontalAlignment="Left" Height="400" Margin="10,142,0,0" VerticalAlignment="Top" Width="191">
+            <Ellipse Height="126" Width="127" Margin="42,15,42,0" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="#FF080707">
+                <Ellipse.Effect>
+                    <DropShadowEffect Direction="285" BlurRadius="27" Color="#FF59594C"/>
+                </Ellipse.Effect>
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="{Binding UrlImage, Converter={StaticResource converterimagen}}" Stretch="Fill"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <TextBlock x:Name="lol" HorizontalAlignment="Center" Margin="0,158,0,0" TextWrapping="Wrap" Text="{Binding Nombre}" VerticalAlignment="Top" Width="80"/>
+            <TextBlock HorizontalAlignment="Center" Margin="66,210,65,0" TextWrapping="Wrap" Text="{Binding Rol}" VerticalAlignment="Top" Width="80"/>
+
+
+
+            <StackPanel HorizontalAlignment="Left" Height="258" Margin="10,258,0,0" VerticalAlignment="Top" Width="201">
+
+
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="VacacionesView" Content="Vacaciones" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="AusenciasView" Content="Ausencias" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
-                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="FicharView" Content="Fichar" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
-                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="FichajesView" Content="Marcajes anteriores" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
-                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="HorariosView" Content="Horarios" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
+                <Button Content="Fichar" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="GestorAdminView" Content="Gestion Admin" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
 
             </StackPanel>
+            
         </Grid>
         <Grid Height="30" VerticalAlignment="Bottom" Background="#FF80E8FF" Margin="211,0,0,0"/>
         <ContentControl Content="{Binding VistaSeleccionada}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"   Margin="211,45,0,30" />

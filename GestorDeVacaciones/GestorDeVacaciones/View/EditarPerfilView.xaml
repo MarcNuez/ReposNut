@@ -1,0 +1,40 @@
+﻿<Window x:Class="GestorDeVacaciones.View.EditarPerfilView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorDeVacaciones.View"
+        mc:Ignorable="d"
+        Title="EditarPerfilView" Height="486.15" Width="569.391">
+    <Grid>
+        <Rectangle HorizontalAlignment="Center" Height="435" Margin="0,10,0,0" VerticalAlignment="Top" Width="363" RadiusY="34" RadiusX="34" Fill="#FFBBF1F3"/>
+        <Ellipse Height="126" Width="127" Margin="0,30,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="#FF080707">
+            <Ellipse.Effect>
+                <DropShadowEffect Direction="285" BlurRadius="27" Color="#FF59594C"/>
+            </Ellipse.Effect>
+            <Ellipse.Fill>
+                <ImageBrush ImageSource="/Recursos/perfilrandom.jpg" Stretch="Fill"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <StackPanel HorizontalAlignment="Center" Height="175" Margin="192,186,191,0" VerticalAlignment="Top" Width="178">
+            <StackPanel.Resources>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="Margin" Value="0,10,0,0"/>
+                    <Setter Property="BorderThickness" Value="0 0 0 1"/>
+                    <Setter Property="Padding" Value="0,5,0,0"/>
+                    <Setter Property="Background" Value="#FFBBF1F3"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                </Style>
+            </StackPanel.Resources>
+            
+            <TextBox Height="23" TextWrapping="Wrap" Text="Nombre"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="Apellidos"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="Email"/>
+            <PasswordBox PasswordChar="*" Margin="0,10,0,0" BorderBrush="#FFABADB3" BorderThickness="0,0,0,1"/>
+            <PasswordBox PasswordChar="*" Margin="0,10,0,0" BorderBrush="#FFABADB3" BorderThickness="0,0,0,1"/>
+
+        </StackPanel>
+        <Button Content="Actualizar" HorizontalAlignment="Center" Margin="192,382,191,0" VerticalAlignment="Top" Width="178"/>
+
+    </Grid>
+</Window>
