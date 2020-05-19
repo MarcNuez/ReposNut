@@ -160,11 +160,21 @@
     <Compile Include="Migrations\202005162050528_Inicial.designer.cs">
       <DependentUpon>202005162050528_Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005191641151_Fichar.cs" />
+    <Compile Include="Migrations\202005191641151_Fichar.designer.cs">
+      <DependentUpon>202005191641151_Fichar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005191647510_Horarios.cs" />
+    <Compile Include="Migrations\202005191647510_Horarios.designer.cs">
+      <DependentUpon>202005191647510_Horarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AusenciasModel.cs" />
     <Compile Include="Model\Cache\UserLoginCache.cs" />
     <Compile Include="Model\DiasElegidosModel.cs" />
     <Compile Include="Model\DiasPendientesModel.cs" />
+    <Compile Include="Model\FicharModel.cs" />
+    <Compile Include="Model\HorariosModel.cs" />
     <Compile Include="Model\TipoAusenciaModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="ViewModel\AusenciasViewModel.cs" />
@@ -214,6 +224,12 @@
     </Compile>
     <EmbeddedResource Include="Migrations\202005162050528_Inicial.resx">
       <DependentUpon>202005162050528_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005191641151_Fichar.resx">
+      <DependentUpon>202005191641151_Fichar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005191647510_Horarios.resx">
+      <DependentUpon>202005191647510_Horarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

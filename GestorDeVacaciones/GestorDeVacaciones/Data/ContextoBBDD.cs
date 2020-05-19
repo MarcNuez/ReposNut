@@ -23,5 +23,8 @@ namespace GestorDeVacaciones.Data
         public DbSet<DiasElegidosModel> DiasElegidos { get; set; }
 
         public DbSet<DiasPendientesModel> DiasPendientes { get; set; }
+
+        public DbSet<FicharModel> Fichar { get; set; }
+        public DbSet<HorariosModel> Horarios { get; set; }
     }
 }
