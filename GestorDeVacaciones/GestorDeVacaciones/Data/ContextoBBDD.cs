@@ -16,6 +16,12 @@ namespace GestorDeVacaciones.Data
 
         }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            Database.SetInitializer<ContextoBBDD>(null);
+            base.OnModelCreating(modelBuilder);
+        }
+
         public DbSet<UserModel> Usuarios { get; set; }
         public DbSet<AusenciasModel> Ausencias { get; set; }
         public DbSet<TipoAusenciaModel> TiposAusencias { get; set; }

@@ -7,6 +7,8 @@
         xmlns:us="clr-namespace:GestorDeVacaciones.View.UserControls"
         xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
         xmlns:conver="clr-namespace:GestorDeVacaciones.Converters"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        
         mc:Ignorable="d"
         Title="MenuPrincipalView" Height="800" Width="1200" WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -22,11 +24,14 @@
             <us:GestorAdminView/>
         </DataTemplate>
 
+
+
         <vm:MenuPrincipalViewModel x:Key="menuVM"/>
         <conver:ImagenNullConverter x:Key="converterimagen"/>
+  
     </Window.Resources>
 
-
+   
 
 
 
@@ -35,7 +40,7 @@
 
     <Grid Margin="0,0,0,0" DataContext="{StaticResource menuVM}">
         <Grid Height="45" VerticalAlignment="Top" Background="#FF0672F3" Margin="211,0,0,0">
-            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Center" Margin="33,15,0,15"/>
+            <TextBlock x:Name="titulo" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding TituloNombre}" VerticalAlignment="Center" Margin="33,2,0,3" FontSize="32" Foreground="White" Width="301"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Width="211" Background="#FF0672F3">
             <Ellipse Height="126" Width="127" Margin="42,15,42,0" HorizontalAlignment="Center" VerticalAlignment="Top" Stroke="#FF080707">
@@ -45,6 +50,11 @@
                 <Ellipse.Fill>
                     <ImageBrush ImageSource="{Binding UrlImage, Converter={StaticResource converterimagen}}" Stretch="Fill"/>
                 </Ellipse.Fill>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseLeftButtonUp" >
+                        <i:InvokeCommandAction Command="{Binding VentanaPerfiles}" />
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </Ellipse>
             <TextBlock x:Name="lol" HorizontalAlignment="Center" Margin="0,158,0,0" TextWrapping="Wrap" Text="{Binding Nombre}" VerticalAlignment="Top" Width="80"/>
             <TextBlock HorizontalAlignment="Center" Margin="66,210,65,0" TextWrapping="Wrap" Text="{Binding Rol}" VerticalAlignment="Top" Width="80"/>
@@ -54,15 +64,45 @@
             <StackPanel HorizontalAlignment="Left" Height="258" Margin="10,258,0,0" VerticalAlignment="Top" Width="201">
 
 
-                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="VacacionesView" Content="Vacaciones" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
-                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="AusenciasView" Content="Ausencias" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
-                <Button Content="Fichar" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
-                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="GestorAdminView" Content="Gestion Admin" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
+                <Button x:Name="vacas"  Command="{Binding AbrirVentanaCommand}" CommandParameter="VacacionesView" Content="Vacaciones" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click" >
+                            <i:InvokeCommandAction Command="{Binding CambiarTitulo}" CommandParameter="{Binding  RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}"/>
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <Button x:Name="ausen" Command="{Binding AbrirVentanaCommand}" CommandParameter="AusenciasView" Content="Ausencias" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click" >
+                            <i:InvokeCommandAction Command="{Binding CambiarTitulo}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}"/>
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <Button x:Name="fich"  Content="Fichar" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click" >
+                            <i:InvokeCommandAction Command="{Binding CambiarTitulo}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}"/>
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
+                <Button x:Name="gestion"  Command="{Binding AbrirVentanaCommand}" CommandParameter="GestionAdminView" Content="Gestion Admin" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Click" >
+                            <i:InvokeCommandAction Command="{Binding CambiarTitulo}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Button}}, Path=Content}"/>
+
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Button>
 
             </StackPanel>
-            
+
         </Grid>
-        <Grid Height="30" VerticalAlignment="Bottom" Background="#FF80E8FF" Margin="211,0,0,0"/>
+        <Grid Height="30" VerticalAlignment="Bottom" Background="#FF80E8FF" Margin="211,0,0,0">
+            <Label Content="{Binding Time}" HorizontalAlignment="Left" Margin="28,3,0,0" VerticalAlignment="Top"/>
+        </Grid>
         <ContentControl Content="{Binding VistaSeleccionada}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"   Margin="211,45,0,30" />
     </Grid>
 </Window>

@@ -1,0 +1,46 @@
+﻿<Window x:Class="GestorDeVacaciones.View.AusenciasGestionAdminView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
+
+        xmlns:local="clr-namespace:GestorDeVacaciones.View"
+        mc:Ignorable="d"
+        Title="AusenciasGestionAdminView" Height="497.369" Width="574.377">
+
+    <Window.Resources>
+        <vm:AusenciasGestionAdminViewModel x:Key="gestorVM"/>
+    </Window.Resources>
+
+    <Grid DataContext="{StaticResource gestorVM}">
+        <DataGrid ItemsSource="{Binding ListaDeDias}" AutoGenerateColumns="False" ColumnWidth="*" Margin="40,126,103,31" AlternatingRowBackground="Beige" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" IsReadOnly="True" Binding="{Binding NombreCompleto}"/>
+                <DataGridTextColumn Header="Estado" IsReadOnly="True" Binding="{Binding Estado}"/>
+                <DataGridTextColumn Header="Dias" IsReadOnly="True" Binding="{Binding Dias}"/>
+                <DataGridTemplateColumn Header="Aprobar" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="MediumSpringGreen"  Width="50" Padding="0">
+                                <Image Source="/Recursos/verif.png" Width="20" Height="20"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Denegar">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Background="PaleVioletRed" Width="50" Padding="0">
+                                <Image Source="/Recursos/cerrar.png" Width="20" Height="20"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="40,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
+        <Label Content="Buscar por nombre: " HorizontalAlignment="Left" Margin="40,54,0,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" Margin="328,73,0,0" VerticalAlignment="Top" Width="135"/>
+    </Grid>
+</Window>

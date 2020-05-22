@@ -10,6 +10,7 @@
         Title="LoginView" Height="500" Width="350" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <vm:LoginViewModel x:Key="LogVM"/>
+        
     </Window.Resources>
     
     
@@ -36,8 +37,8 @@
         <Grid HorizontalAlignment="Left" Height="217" Margin="46,164,0,0" VerticalAlignment="Top" Width="250">
             <TextBlock Text="Login" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Foreground="#FF595959"/>
             <StackPanel HorizontalAlignment="Left" Height="143" Margin="10,48,0,26" VerticalAlignment="Center" Width="230">
-                <TextBox x:Name="txtUsuario" Margin="0,10" materialDesign:HintAssist.Hint="Usuario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
-                <PasswordBox x:Name="txtContraseña" Margin="0,10" materialDesign:HintAssist.Hint="Contraseña" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <TextBox x:Name="txtUsuario" Margin="0,10"  FontFamily="Champagne &amp; Limousines" FontSize="18"/>
+                <PasswordBox x:Name="txtContraseña" Margin="0,10" FontFamily="Champagne &amp; Limousines" FontSize="18"/>
             </StackPanel>
         </Grid>
         <Button Click="Login" Content="Login" HorizontalAlignment="Center" Margin="94,361,94,0" VerticalAlignment="Top" Width="154" Height="42" FontSize="18"  FontFamily="Champagne &amp;"/>

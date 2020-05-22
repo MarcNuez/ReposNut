@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,8 @@ namespace GestorDeVacaciones.Model
         public string Comentario { get; set; }
 
         public bool Denegada { get; set; }
+
+        
 
 
     }

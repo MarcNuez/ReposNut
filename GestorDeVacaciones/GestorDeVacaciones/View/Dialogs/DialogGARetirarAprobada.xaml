@@ -1,0 +1,15 @@
+﻿<Window x:Class="GestorDeVacaciones.View.Dialogs.DialogGARetirarAprobada"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GestorDeVacaciones.View.Dialogs"
+        mc:Ignorable="d"
+        Title="DialogGARetirarAprobada" Height="119.336" Width="287.846" WindowStyle="None" AllowsTransparency="True" Background="#E5EEE4E4">
+    <Grid>
+        <Button Click="aceptar" Content="Aceptar" HorizontalAlignment="Right" Margin="0,0,121,10" Width="104" Height="32" VerticalAlignment="Bottom"/>
+        <Button Click="CerrarVentana" Content="Cancelar" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="106"/>
+        <TextBlock HorizontalAlignment="Left" Margin="23,22,0,0" TextWrapping="Wrap" Text="Este dia esta aprobado. ¿Quieres pasarlo a pendiente?" VerticalAlignment="Top" Height="50" Width="236"/>
+
+    </Grid>
+</Window>

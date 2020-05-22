@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\segur\source\repos\ReposNut3\GestorDeVacaciones\GestorDeVacaciones\obj\Release\
+D:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\obj\Release\
 GestorDeVacaciones
 none
 false
 TRACE
-C:\Users\segur\source\repos\ReposNut3\GestorDeVacaciones\GestorDeVacaciones\App.xaml
-8480315343
+D:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\App.xaml
+111350665687
 
-38-1277127706
-45-216242655
-View\CalendarioGrupalView.xaml;View\EditarPerfilView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\GestorAdminView.xaml;View\UserControls\VacacionesView.xaml;
+44182468362
+45-518307336
+View\CalendarioGrupalView.xaml;View\EditarPerfilView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\FichajesView.xaml;View\UserControls\FicharView.xaml;View\UserControls\GestorAdminView.xaml;View\UserControls\HorariosView.xaml;View\UserControls\VacacionesView.xaml;
 
 True
 
