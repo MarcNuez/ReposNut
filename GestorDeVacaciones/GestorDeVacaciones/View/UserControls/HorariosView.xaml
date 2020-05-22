@@ -13,15 +13,8 @@
         Background="White" >
 
     <Grid>
-        <TextBox Margin="51,22,561,385" x:Name="txt_nombre" materialDesign:HintAssist.Hint="Nombre del horario" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_nombre_TextChanged"  />
-        <TextBox Margin="51,70,614,333"  x:Name="txt_entrada1" materialDesign:HintAssist.Hint="Primera entrada" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_entrada1_TextChanged" />
-        <TextBox Margin="196,70,480,333" x:Name="txt_salida1" materialDesign:HintAssist.Hint="Primera salida" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_salida1_TextChanged"  />
-        <TextBox Margin="338,70,336,333" x:Name="txt_entrada2" materialDesign:HintAssist.Hint="Segunda entrada" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_entrada2_TextChanged" />
-        <TextBox Margin="469,70,212,333" x:Name="txt_salida2" materialDesign:HintAssist.Hint="Segunda salida" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_salida2_TextChanged"  />
 
-        <Label Content="Horas trabajadas:" Margin="606,88,56,331"/>
-        <Label Content="Horarios" Margin="44,248,656,172"/>
-        <ScrollViewer x:Name="scv_horarios" Margin="44,283,38,21" Background="LightBlue"/>
+        <Label Content="Horarios" Margin="51,205,649,215" RenderTransformOrigin="0.472,0.452"/>
         <CheckBox Content="Lunes" x:Name="cb_lunes" HorizontalAlignment="Left" Margin="267,44,0,0" VerticalAlignment="Top" Checked="cb_lunes_Checked"/>
         <CheckBox Content="Martes" x:Name="cb_martes" HorizontalAlignment="Left" Margin="325,44,0,0" VerticalAlignment="Top" Checked="cb_martes_Checked"/>
         <CheckBox Content="Miércoles" x:Name="cb_miercoles" HorizontalAlignment="Left" Margin="388,44,0,0" VerticalAlignment="Top" Checked="cb_miercoles_Checked"/>
@@ -29,9 +22,57 @@
         <CheckBox Content="Viernes" x:Name="cb_viernes" HorizontalAlignment="Left" Margin="527,44,0,0" VerticalAlignment="Top" Checked="cb_viernes_Checked"/>
         <CheckBox Content="Sábado" x:Name="cb_sabado" HorizontalAlignment="Left" Margin="593,44,0,0" VerticalAlignment="Top" Checked="cb_sabado_Checked"/>
         <CheckBox Content="Domingo" x:Name="cb_domingo" HorizontalAlignment="Left" Margin="660,44,0,0" VerticalAlignment="Top" Checked="cb_domingo_Checked"/>
-        <Button Content="Añadir horario" x:Name="btn_anadirHorario" HorizontalAlignment="Left" Margin="51,142,0,0" VerticalAlignment="Top" Width="188" Click="btn_anadirHorario_Click"/>
-        <ComboBox HorizontalAlignment="Left" x:Name="cmb_horario" Margin="51,206,0,0" VerticalAlignment="Top" Width="169" SelectionChanged="cmb_horario_SelectionChanged"/>
-        <Button Content="Eliminar horario" x:Name="btn_eliminarHorario" HorizontalAlignment="Left" Margin="245,202,0,0" VerticalAlignment="Top" Width="188" Click="btn_eliminarHorario_Click"/>
+        <Button Content="Añadir horario" x:Name="btn_anadirHorario" HorizontalAlignment="Left" Margin="610,84,0,0" VerticalAlignment="Top" Width="148" Click="btn_anadirHorario_Click"/>
+        <ComboBox HorizontalAlignment="Left" x:Name="cmb_horario" Margin="56,148,0,0" VerticalAlignment="Top" Width="169" SelectionChanged="cmb_horario_SelectionChanged" 
+                  SelectedValue="ID" DisplayMemberPath="Name"/>
+        <Button Content="Eliminar horario" x:Name="btn_eliminarHorario" HorizontalAlignment="Left" Margin="245,144,0,0" VerticalAlignment="Top" Width="152" Click="btn_eliminarHorario_Click"/>
+        <ListView Margin="16,240,26,11" x:Name="gdv_horarios" ItemsSource="{Binding}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Horarios">
+                    <GridViewColumn Header="Nombre" Width="85" DisplayMemberBinding="{Binding Path=nombre}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding nombre}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Primera entrada" Width="150" DisplayMemberBinding="{Binding Path=entrada1}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding entrada1}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Primera salida" Width="150" DisplayMemberBinding="{Binding Path=salida1}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding salida1}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Segunda entrada" Width="150" DisplayMemberBinding="{Binding Path=entrada2}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding entrada2}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Segunda salida" Width="150" DisplayMemberBinding="{Binding Path=salida2}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding salida2}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox Margin="51,22,561,385" x:Name="txt_nombre" materialDesign:HintAssist.Hint="Nombre del horario" MaxHeight="43" MaxWidth="190" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_nombre_TextChanged"  />
+        <TextBox Margin="51,70,614,333"  x:Name="txt_entrada1" materialDesign:HintAssist.Hint="Primera entrada" MaxHeight="43" MaxWidth="190" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_entrada1_TextChanged" />
+        <TextBox Margin="191,70,485,333" x:Name="txt_salida1" materialDesign:HintAssist.Hint="Primera salida" MaxHeight="43" MaxWidth="190" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_salida1_TextChanged"  />
+        <TextBox  Margin="335,70,339,333" x:Name="txt_entrada2" materialDesign:HintAssist.Hint="Segunda entrada" MaxHeight="43" MaxWidth="190" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_entrada2_TextChanged" />
+        <TextBox Margin="469,70,212,333" x:Name="txt_salida2" materialDesign:HintAssist.Hint="Segunda salida" MaxHeight="43" MaxWidth="190" Style="{StaticResource MaterialDesignFloatingHintTextBox}" TextChanged="txt_salida2_TextChanged"  />
     </Grid>
 
 </UserControl>

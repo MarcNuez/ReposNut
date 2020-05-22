@@ -1,4 +1,8 @@
-﻿using System;
+﻿using GestorDeVacaciones.Data;
+using GestorDeVacaciones.Model;
+using GestorDeVacaciones.Model.Cache;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +24,12 @@ namespace GestorDeVacaciones.View.UserControls
     /// </summary>
     public partial class FichajesView : UserControl
     {
+        ContextoBBDD db = new ContextoBBDD();
         public FichajesView()
         {
             InitializeComponent();
+            cargarCombobox();
+            mostrarRegistros();
         }
 
         private void cmb_usuarios_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -31,8 +38,17 @@ namespace GestorDeVacaciones.View.UserControls
         }
         private void mostrarRegistros()
         {
+            
+            gdv_marcajes.DataContext = db.Fichar.ToArray();
 
-            //scv_marcajes+=
         }
+        private void cargarCombobox()
+        {
+            List<UserModel> users = db.Usuarios.ToList();
+            cmb_usuarios.ItemsSource = users;
+            cmb_usuarios.DisplayMemberPath = "Name";
+            cmb_usuarios.SelectedValuePath = "ID";
+        }
+
     }
 }

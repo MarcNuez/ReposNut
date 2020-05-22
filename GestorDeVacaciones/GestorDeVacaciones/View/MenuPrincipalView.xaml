@@ -21,6 +21,15 @@
         <DataTemplate DataType="{x:Type vm:GestorAdminViewModel}">
             <us:GestorAdminView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:FicharViewModel}">
+            <us:FicharView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:FichajesViewModel}">
+            <us:FichajesView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:HorariosViewModel}">
+            <us:HorariosView/>
+        </DataTemplate>
 
         <vm:MenuPrincipalViewModel x:Key="menuVM"/>
         <conver:ImagenNullConverter x:Key="converterimagen"/>
@@ -51,12 +60,14 @@
 
 
 
-            <StackPanel HorizontalAlignment="Left" Height="258" Margin="10,258,0,0" VerticalAlignment="Top" Width="201">
+            <StackPanel HorizontalAlignment="Left" Height="385" Margin="10,258,0,0" VerticalAlignment="Top" Width="201">
 
 
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="VacacionesView" Content="Vacaciones" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="AusenciasView" Content="Ausencias" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
-                <Button Content="Fichar" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
+                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="FicharView"  Content="Fichar" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
+                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="FichajesView"  Content="Fichajes" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
+                <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="HorariosView"  Content="Horarios" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
                 <Button Command="{Binding AbrirVentanaCommand}" CommandParameter="GestorAdminView" Content="Gestion Admin" Height="62" Background="#FF0672F3" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Left" Padding="20,1,1,1"/>
 
             </StackPanel>

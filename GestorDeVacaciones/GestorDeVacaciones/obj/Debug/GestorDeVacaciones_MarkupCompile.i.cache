@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\segur\source\repos\ReposNut3\GestorDeVacaciones\GestorDeVacaciones\App.xaml
-8480315343
+111350665687
 
-39424069176
+501643741589
 45-216242655
-View\CalendarioGrupalView.xaml;View\EditarPerfilView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\GestorAdminView.xaml;View\UserControls\VacacionesView.xaml;
+View\CalendarioGrupalView.xaml;View\EditarPerfilView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\FichajesView.xaml;View\UserControls\FicharView.xaml;View\UserControls\GestorAdminView.xaml;View\UserControls\HorariosView.xaml;View\UserControls\VacacionesView.xaml;
 
-False
+True
 

@@ -168,6 +168,14 @@
     <Compile Include="Migrations\202005191647510_Horarios.designer.cs">
       <DependentUpon>202005191647510_Horarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005201522033_Warning.cs" />
+    <Compile Include="Migrations\202005201522033_Warning.designer.cs">
+      <DependentUpon>202005201522033_Warning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005211315055_horarios2.cs" />
+    <Compile Include="Migrations\202005211315055_horarios2.designer.cs">
+      <DependentUpon>202005211315055_horarios2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AusenciasModel.cs" />
     <Compile Include="Model\Cache\UserLoginCache.cs" />
@@ -177,9 +185,13 @@
     <Compile Include="Model\HorariosModel.cs" />
     <Compile Include="Model\TipoAusenciaModel.cs" />
     <Compile Include="Model\UserModel.cs" />
+    <Compile Include="Model\WarningModel.cs" />
     <Compile Include="ViewModel\AusenciasViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\FichajesViewModel.cs" />
+    <Compile Include="ViewModel\FicharViewModel.cs" />
     <Compile Include="ViewModel\GestorAdminViewModel.cs" />
+    <Compile Include="ViewModel\HorariosViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MenuPrincipalViewModel.cs" />
     <Compile Include="ViewModel\VacacionesViewModel.cs" />
@@ -201,8 +213,17 @@
     <Compile Include="View\UserControls\CalendarControl.xaml.cs">
       <DependentUpon>CalendarControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\UserControls\FichajesView.xaml.cs">
+      <DependentUpon>FichajesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\FicharView.xaml.cs">
+      <DependentUpon>FicharView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\UserControls\GestorAdminView.xaml.cs">
       <DependentUpon>GestorAdminView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\UserControls\HorariosView.xaml.cs">
+      <DependentUpon>HorariosView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\VacacionesView.xaml.cs">
       <DependentUpon>VacacionesView.xaml</DependentUpon>
@@ -230,6 +251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005191647510_Horarios.resx">
       <DependentUpon>202005191647510_Horarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005201522033_Warning.resx">
+      <DependentUpon>202005201522033_Warning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005211315055_horarios2.resx">
+      <DependentUpon>202005211315055_horarios2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -269,9 +296,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\UserControls\FichajesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\UserControls\FicharView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\UserControls\GestorAdminView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\UserControls\HorariosView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\UserControls\VacacionesView.xaml">
       <SubType>Designer</SubType>
