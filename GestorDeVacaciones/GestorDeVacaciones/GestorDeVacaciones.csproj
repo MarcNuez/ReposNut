@@ -152,7 +152,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Comandos\AbrirVentanaCommand.cs" />
-    <Compile Include="Comandos\CambiarTitulo.cs" />
     <Compile Include="Comandos\ParamCommand.cs" />
     <Compile Include="Comandos\RelayCommand.cs" />
     <Compile Include="Converters\ImagenNullConverter.cs" />
@@ -169,9 +168,13 @@
     <Compile Include="Migrations\202005191647510_Horarios.designer.cs">
       <DependentUpon>202005191647510_Horarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202005212142459_actualizadoDiaElegidosDenegado.cs" />
-    <Compile Include="Migrations\202005212142459_actualizadoDiaElegidosDenegado.Designer.cs">
-      <DependentUpon>202005212142459_actualizadoDiaElegidosDenegado.cs</DependentUpon>
+    <Compile Include="Migrations\202005201522033_Warning.cs" />
+    <Compile Include="Migrations\202005201522033_Warning.designer.cs">
+      <DependentUpon>202005201522033_Warning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005211315055_horarios2.cs" />
+    <Compile Include="Migrations\202005211315055_horarios2.designer.cs">
+      <DependentUpon>202005211315055_horarios2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202005231253564_retoquebbddfichaje.cs" />
     <Compile Include="Migrations\202005231253564_retoquebbddfichaje.designer.cs">
@@ -180,18 +183,15 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AusenciasModel.cs" />
     <Compile Include="Model\Cache\UserLoginCache.cs" />
-    <Compile Include="Model\ClasesAnonimas\DataGridGestionAdmin.cs" />
     <Compile Include="Model\DiasElegidosModel.cs" />
     <Compile Include="Model\DiasPendientesModel.cs" />
     <Compile Include="Model\FicharModel.cs" />
     <Compile Include="Model\HorariosModel.cs" />
     <Compile Include="Model\TipoAusenciaModel.cs" />
     <Compile Include="Model\UserModel.cs" />
-    <Compile Include="ViewModel\AusenciasGestionAdminViewModel.cs" />
+    <Compile Include="Model\WarningModel.cs" />
     <Compile Include="ViewModel\AusenciasViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
-    <Compile Include="ViewModel\DialogViewModel\DialogGestionAdminAprobarDenegarViewModel.cs" />
-    <Compile Include="ViewModel\EditarPerfilViewModel.cs" />
     <Compile Include="ViewModel\FichajesViewModel.cs" />
     <Compile Include="ViewModel\FicharViewModel.cs" />
     <Compile Include="ViewModel\GestorAdminViewModel.cs" />
@@ -199,17 +199,8 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MenuPrincipalViewModel.cs" />
     <Compile Include="ViewModel\VacacionesViewModel.cs" />
-    <Compile Include="View\AusenciasGestionAdminView.xaml.cs">
-      <DependentUpon>AusenciasGestionAdminView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\CalendarioGrupalView.xaml.cs">
       <DependentUpon>CalendarioGrupalView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Dialogs\DialogGARetirarAprobada.xaml.cs">
-      <DependentUpon>DialogGARetirarAprobada.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\Dialogs\DialogGestionAdminAprobarDenegar.xaml.cs">
-      <DependentUpon>DialogGestionAdminAprobarDenegar.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\EditarPerfilView.xaml.cs">
       <DependentUpon>EditarPerfilView.xaml</DependentUpon>
@@ -225,9 +216,6 @@
     </Compile>
     <Compile Include="View\UserControls\CalendarControl.xaml.cs">
       <DependentUpon>CalendarControl.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UserControls\CalendarioGrupalVacas.xaml.cs">
-      <DependentUpon>CalendarioGrupalVacas.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\UserControls\FichajesView.xaml.cs">
       <DependentUpon>FichajesView.xaml</DependentUpon>
@@ -268,8 +256,11 @@
     <EmbeddedResource Include="Migrations\202005191647510_Horarios.resx">
       <DependentUpon>202005191647510_Horarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202005212142459_actualizadoDiaElegidosDenegado.resx">
-      <DependentUpon>202005212142459_actualizadoDiaElegidosDenegado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202005201522033_Warning.resx">
+      <DependentUpon>202005201522033_Warning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005211315055_horarios2.resx">
+      <DependentUpon>202005211315055_horarios2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005231253564_retoquebbddfichaje.resx">
       <DependentUpon>202005231253564_retoquebbddfichaje.cs</DependentUpon>
@@ -288,21 +279,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="View\AusenciasGestionAdminView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="View\CalendarioGrupalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\Dialogs\DialogGARetirarAprobada.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\Dialogs\DialogGestionAdminAprobarDenegar.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\EditarPerfilView.xaml">
       <SubType>Designer</SubType>
@@ -323,10 +302,6 @@
     <Page Include="View\UserControls\CalendarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UserControls\CalendarioGrupalVacas.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\UserControls\FichajesView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -357,12 +332,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\perfilrandom.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Recursos\cerrar.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Recursos\verif.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.1.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.1.1\build\MaterialDesignThemes.targets')" />

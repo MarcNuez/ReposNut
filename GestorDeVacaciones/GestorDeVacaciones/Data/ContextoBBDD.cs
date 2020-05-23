@@ -32,5 +32,6 @@ namespace GestorDeVacaciones.Data
 
         public DbSet<FicharModel> Fichar { get; set; }
         public DbSet<HorariosModel> Horarios { get; set; }
+        public DbSet<WarningModel> Warning { get; set; }
     }
 }

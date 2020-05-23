@@ -14,8 +14,64 @@
     <Grid>
         <Label Content="Marcajes anteriores" Margin="26,30,657,390"/>
         <Label Content="Usuario:" Height="30" Margin="529,30,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="52"/>
-        <ComboBox x:Name="cmb_usuarios" Margin="586,30,0,0" MaxHeight="40" Width="120" MaxWidth="120" VerticalAlignment="Top" HorizontalAlignment="Left" SelectionChanged="cmb_usuarios_SelectionChanged"/>
-        <Calendar HorizontalAlignment="Left" Margin="499,63,0,0" VerticalAlignment="Top" Width="271" x:Name="cldr_fecha"/>
-        <ScrollViewer HorizontalAlignment="Left" Height="354" Margin="26,65,0,0" VerticalAlignment="Top" Width="445" x:Name="scv_marcajes" Background="LightBlue"/>
+        <ComboBox x:Name="cmb_usuarios" Margin="586,30,0,0" MaxHeight="40" Width="120" MaxWidth="120" VerticalAlignment="Top" HorizontalAlignment="Left" 
+                  SelectionChanged="cmb_usuarios_SelectionChanged" SelectedValue="ID" DisplayMemberPath="Name">
+            
+        </ComboBox>
+        <ListView Margin="10,132,10,117" x:Name="gdv_marcajes" ItemsSource="{Binding}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Fichajes">
+                    <GridViewColumn Header="ID" Width="50" DisplayMemberBinding="{Binding Path=UserID}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding UserID}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Usuario"  Width="80"  >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  x:Name="lbl_nombreUsuario"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Dia" Width="75" DisplayMemberBinding="{Binding Path=dia}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding dia}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Primera entrada" Width="150" DisplayMemberBinding="{Binding Path=entrada1}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding entrada1}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Primera salida" Width="150" DisplayMemberBinding="{Binding Path=salida1}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding salida1}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Segunda entrada" Width="150" DisplayMemberBinding="{Binding Path=entrada2}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding entrada2}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="Segunda salida" Width="150" DisplayMemberBinding="{Binding Path=salida2}" >
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label  Content="{Binding salida2}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </UserControl>
