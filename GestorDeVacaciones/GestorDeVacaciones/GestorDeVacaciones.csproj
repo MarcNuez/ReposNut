@@ -173,6 +173,10 @@
     <Compile Include="Migrations\202005212142459_actualizadoDiaElegidosDenegado.Designer.cs">
       <DependentUpon>202005212142459_actualizadoDiaElegidosDenegado.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202005231253564_retoquebbddfichaje.cs" />
+    <Compile Include="Migrations\202005231253564_retoquebbddfichaje.designer.cs">
+      <DependentUpon>202005231253564_retoquebbddfichaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AusenciasModel.cs" />
     <Compile Include="Model\Cache\UserLoginCache.cs" />
@@ -266,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202005212142459_actualizadoDiaElegidosDenegado.resx">
       <DependentUpon>202005212142459_actualizadoDiaElegidosDenegado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005231253564_retoquebbddfichaje.resx">
+      <DependentUpon>202005231253564_retoquebbddfichaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

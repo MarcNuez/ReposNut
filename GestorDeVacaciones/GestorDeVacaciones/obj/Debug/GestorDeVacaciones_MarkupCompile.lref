@@ -1,18 +1,18 @@
 ﻿
-FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\App.xaml;;
+
+FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\AusenciasGestionAdminView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\CalendarioGrupalView.xaml;;
+FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\Dialogs\DialogGARetirarAprobada.xaml;;
+FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\Dialogs\DialogGestionAdminAprobarDenegar.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\EditarPerfilView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\LoginView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\MenuPrincipalView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\AusenciasView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\CalendarControl.xaml;;
+FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\CalendarioGrupalVacas.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\FichajesView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\FicharView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\GestorAdminView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\HorariosView.xaml;;
 FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\VacacionesView.xaml;;
-FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\AusenciasGestionAdminView.xaml;;
-FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\Dialogs\DialogGARetirarAprobada.xaml;;
-FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\Dialogs\DialogGestionAdminAprobarDenegar.xaml;;
-FD:\GestorVacasRepo\ReposNut\GestorDeVacaciones\GestorDeVacaciones\View\UserControls\CalendarioGrupalVacas.xaml;;
 

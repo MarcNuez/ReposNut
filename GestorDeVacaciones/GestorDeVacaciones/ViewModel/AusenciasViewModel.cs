@@ -35,16 +35,11 @@ namespace GestorDeVacaciones.ViewModel
 
         public AusenciasViewModel()
         {
-
-
-
             using (var db = new ContextoBBDD())
             {
                 var listTiposAusencias = db.TiposAusencias.ToList();
                 TiposAusencias = listTiposAusencias;
             }
-
-
 
         }
 
