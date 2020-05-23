@@ -24,5 +24,19 @@ namespace GestorDeVacaciones.View.UserControls
         {
             InitializeComponent();
         }
+
+        private void abrirCalendarGrupal(object sender, RoutedEventArgs e)
+        {
+            CalendarioGrupalView cgv = new CalendarioGrupalView();
+            cgv.Show();
+        }
+
+        private void abrirAusenciasGestion(object sender, RoutedEventArgs e)
+        {
+
+            AusenciasGestionAdminView agav = new AusenciasGestionAdminView();
+            agav.Show();
+
+        }
     }
 }

@@ -81,9 +81,19 @@ namespace GestorDeVacaciones.View.UserControls
 
             using (var db = new ContextoBBDD())
             {
-                
+
                 db.DiasElegidos.AddRange(listaDeDias);
-                
+
+
+                var cambiarNumeroDiasRestantes = db.DiasPendientes.SingleOrDefault(b => b.UserModelId == UserLoginCache.Id);
+                if (cambiarNumeroDiasRestantes != null)
+                {
+                    cambiarNumeroDiasRestantes.DiasQueMeQuedan = cambiarNumeroDiasRestantes.DiasQueMeQuedan - listaDeDias.Count;
+
+                }
+
+
+
                 db.SaveChanges();
 
 
@@ -93,5 +103,9 @@ namespace GestorDeVacaciones.View.UserControls
             calControl.ListaDiasSeleccionados.Clear();
             calControl.refesh();
         }
+
+
+        
+
     }
 }

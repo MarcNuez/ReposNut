@@ -23,10 +23,10 @@
         <Label Content="Tipo:" HorizontalAlignment="Left" Margin="50,85,0,0" VerticalAlignment="Top"/>
         <Label Content="Desde:" HorizontalAlignment="Left" Margin="274,93,0,0" VerticalAlignment="Top"/>
         <Label Content="Hasta:" HorizontalAlignment="Left" Margin="467,93,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="50,111,0,0" VerticalAlignment="Top" Width="151"/>
-        <TextBox HorizontalAlignment="Left" Height="92" Margin="50,245,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
-        <Button Content="Enviar" HorizontalAlignment="Left" Margin="385,269,0,0" VerticalAlignment="Top" Width="136" Height="36"/>
-        <DatePicker SelectedDate="{Binding StartDate}" x:Name="calDesde"  HorizontalAlignment="Left" Margin="320,94,0,0" VerticalAlignment="Top"  >
+        <ComboBox  SelectedValuePath="Tipo" SelectedValue="{Binding TipoSeleccionado.Tipo}" SelectedItem="{Binding TipoSeleccionado}" ItemsSource="{Binding TiposAusencias}" DisplayMemberPath="Tipo" HorizontalAlignment="Left" Margin="50,111,0,0" VerticalAlignment="Top" Width="151"/>
+        <TextBox HorizontalAlignment="Left" Height="92" Margin="50,245,0,0" TextWrapping="Wrap" Text="{Binding ComentarioTxt,Mode=TwoWay}" VerticalAlignment="Top" Width="252"/>
+        <Button Command="{Binding EnviarAusencia}" Content="Enviar" HorizontalAlignment="Left" Margin="408,301,0,0" VerticalAlignment="Top" Width="136" Height="36"/>
+        <DatePicker SelectedDate="{Binding StartDate,Mode=TwoWay}" x:Name="calDesde"  HorizontalAlignment="Left" Margin="320,94,0,0" VerticalAlignment="Top"  >
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="SelectedDateChanged" >
                     <i:InvokeCommandAction Command="{Binding SeleccionarFecha}"  />

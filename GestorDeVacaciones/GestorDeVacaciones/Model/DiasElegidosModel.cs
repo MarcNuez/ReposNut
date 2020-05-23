@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Documents;
 
 namespace GestorDeVacaciones.Model
 {
@@ -19,6 +20,8 @@ namespace GestorDeVacaciones.Model
         public int Año { get; set; }
 
         public bool Aprobado { get; set; }
+
+        public bool Denegado { get; set; }
 
         public string diaFormato { get {
 

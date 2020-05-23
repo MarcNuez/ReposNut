@@ -4,14 +4,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GestorDeVacaciones.View.UserControls"
+             xmlns:vm="clr-namespace:GestorDeVacaciones.ViewModel"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" x:Class="GestorDeVacaciones.View.UserControls.GestorAdminView"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="White">
+   
+
     <Grid>
-        <DataGrid Margin="40,120,34,31"/>
-        <Button Content="Aprobar" Margin="0,63,34,0" VerticalAlignment="Top" Height="38" HorizontalAlignment="Right" Width="119"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="40,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264"/>
-        <Label Content="Buscar por nombre: " HorizontalAlignment="Left" Margin="40,54,0,0" VerticalAlignment="Top"/>
-        <ComboBox HorizontalAlignment="Left" Margin="328,73,0,0" VerticalAlignment="Top" Width="135"/>
+
+        <Button Margin="100,0,0,0" Content="Calendario" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="166" Height="94"/>
+        <Button Margin="0,0,0,0" Content="Vacaciones" VerticalAlignment="Center" Click="abrirCalendarGrupal" Height="94" HorizontalAlignment="Center" Width="166"/>
+        <Button Margin="0,0,100,0" Content="Ausencias" HorizontalAlignment="Right"  VerticalAlignment="Center" Width="166"  Height="94" Click="abrirAusenciasGestion"/>
     </Grid>
 </UserControl>

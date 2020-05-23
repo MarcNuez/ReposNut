@@ -290,9 +290,23 @@ namespace GestorDeVacaciones.View.UserControls
                 });
 
                 sumarDias(sender, e);
-            }else if (color == Brushes.OrangeRed)
+            }
+            else if (color == Brushes.OrangeRed)
             {
+
                 MessageBox.Show("Dia pendiente de ser aceptado, Desea eliminar la solicitud?");
+
+                using (var db = new ContextoBBDD())
+                {
+                    var numDia = Convert.ToInt32(celda.Content.ToString());
+                    var diaBorrar = db.DiasElegidos.FirstOrDefault(x => x.Dia == numDia
+                    && x.Mes == mesSeleccionado && x.Año == añoSeleccionado && x.UserModelId == UserLoginCache.Id);
+
+                    db.DiasElegidos.Remove(diaBorrar);
+                    db.SaveChanges();
+                }
+                restarDias(sender, e);
+                refesh();
             }
 
 

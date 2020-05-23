@@ -8,5 +8,8 @@ namespace GestorDeVacaciones.ViewModel
 {
     public class GestorAdminViewModel :BaseViewModel
     {
+
+
+
     }
 }
