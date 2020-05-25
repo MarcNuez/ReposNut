@@ -8,8 +8,7 @@ namespace GestorDeVacaciones.Model
 {
     public class HorariosModel
     {
-        public int ID { get; set; }
-        public string nombre { get; set; }
+        public int Id { get; set; }
         public bool lunes { get; set; }
         public bool martes { get; set; }
         public bool miercoles { get; set; }
