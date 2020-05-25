@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\segur\source\repos\ReposNut3\GestorDeVacaciones\GestorDeVacaciones\obj\Release\
+C:\Users\segur\source\repos\ReposNut6\GestorDeVacaciones\GestorDeVacaciones\obj\Release\
 GestorDeVacaciones
 none
 false
 TRACE
-C:\Users\segur\source\repos\ReposNut3\GestorDeVacaciones\GestorDeVacaciones\App.xaml
-111350665687
+C:\Users\segur\source\repos\ReposNut6\GestorDeVacaciones\GestorDeVacaciones\App.xaml
+15-1980370052
 
-471201559947
-45-216242655
-View\CalendarioGrupalView.xaml;View\EditarPerfilView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\FichajesView.xaml;View\UserControls\FicharView.xaml;View\UserControls\GestorAdminView.xaml;View\UserControls\HorariosView.xaml;View\UserControls\VacacionesView.xaml;
+62-651196899
+45936602195
+View\AusenciasGestionAdminView.xaml;View\CalendarioGrupalView.xaml;View\Dialogs\DialogGARetirarAprobada.xaml;View\Dialogs\DialogGestionAdminAprobarDenegar.xaml;View\EditarPerfilView.xaml;View\LoginView.xaml;View\MenuPrincipalView.xaml;View\UserControls\AusenciasView.xaml;View\UserControls\CalendarControl.xaml;View\UserControls\CalendarioGrupalVacas.xaml;View\UserControls\FichajesView.xaml;View\UserControls\FicharView.xaml;View\UserControls\GestorAdminView.xaml;View\UserControls\HorariosView.xaml;View\UserControls\VacacionesView.xaml;
 
 True
 

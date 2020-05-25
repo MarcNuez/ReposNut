@@ -22,7 +22,7 @@ namespace GestorDeVacaciones.ViewModel
         public string Rol { get; set; } = UserLoginCache.Rol;
         public string UrlImage { get; set; } = UserLoginCache.UrlImage;
         public ICommand AbrirVentanaCommand { get; set; }
-        public CambiarTitulo CambiarTitulo { get; set; }
+       // public CambiarTitulo CambiarTitulo { get; set; }
         public BaseViewModel VistaSeleccionada
         {
             get { return _vistaSeleccionada; }
@@ -89,7 +89,7 @@ namespace GestorDeVacaciones.ViewModel
 
             //metodos personalizados
             AbrirVentanaCommand = new AbrirVentanaCommand(this);
-            CambiarTitulo = new CambiarTitulo(this);
+            //CambiarTitulo = new CambiarTitulo(this);
 
 
         }

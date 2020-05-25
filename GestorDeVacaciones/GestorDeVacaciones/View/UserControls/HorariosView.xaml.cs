@@ -29,73 +29,13 @@ namespace GestorDeVacaciones.View.UserControls
         public HorariosView()
         {
             InitializeComponent();
-            mostrarHorarios();
-            mostrarCombobox();
-        }
-
-
-        #region entradas/salidas
-        private void txt_entrada1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
-
-        private void txt_salida1_TextChanged(object sender, TextChangedEventArgs e)
-        {
            
         }
 
-        private void txt_entrada2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
 
-        private void txt_salida2_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
-        #endregion
+       
         #region Anadir horario
-        private void txt_nombre_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-        #region Dias semana
-        private void cb_lunes_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cb_martes_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cb_miercoles_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cb_jueves_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cb_viernes_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cb_sabado_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void cb_domingo_Checked(object sender, RoutedEventArgs e)
-        {
-
-        }
-        #endregion
+       
         private void btn_anadirHorario_Click(object sender, RoutedEventArgs e)
         {
                 HorariosModel h = new HorariosModel();
@@ -151,17 +91,7 @@ namespace GestorDeVacaciones.View.UserControls
 
         }
         #endregion
-        #region borrar horario
-        private void cmb_horario_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void btn_eliminarHorario_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-        #endregion
+       
         #region metodos
         private static TimeSpan stringAHora(string txt_hora)
         {
@@ -171,14 +101,8 @@ namespace GestorDeVacaciones.View.UserControls
             TimeSpan ts = new TimeSpan(h, m, 00);
             return ts;
         }
-        private void mostrarHorarios()
-        {
-            gdv_horarios.DataContext = db.Horarios.ToArray();
-        }
-        private void mostrarCombobox()
-        {
-            cmb_horario.DataContext = db.Horarios.ToArray();
-        }
+       
+       
         #endregion
     }
 }

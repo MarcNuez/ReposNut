@@ -10,52 +10,24 @@
         mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800"
         Background="White" >
-
-    <Grid >
+    <UserControl.Resources>
+        <vm:FicharViewModel x:Key="fVM"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource fVM}">
         <Label Content="Últimos 10 marcajes" Margin="44,179,635,244"/>
-        <ListView Margin="72,206,64,43" x:Name="gdv_marcajes" ItemsSource="{Binding}">
-            <ListView.View>
-                <GridView AllowsColumnReorder="true" ColumnHeaderToolTip="Fichajes">
-                    
-                    <GridViewColumn Header="Dia" Width="75" DisplayMemberBinding="{Binding Path=dia}" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Label  Content="{Binding dia}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Primera entrada" Width="150" DisplayMemberBinding="{Binding Path=entrada1}" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Label  Content="{Binding entrada1}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Primera salida" Width="150" DisplayMemberBinding="{Binding Path=salida1}" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Label  Content="{Binding salida1}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Segunda entrada" Width="150" DisplayMemberBinding="{Binding Path=entrada2}" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Label  Content="{Binding entrada2}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Header="Segunda salida" Width="150" DisplayMemberBinding="{Binding Path=salida2}" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Label  Content="{Binding salida2}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <Button x:Name="btn_entrar" Content="Entrada" HorizontalAlignment="Left" Margin="251,74,0,0" VerticalAlignment="Top" Width="121" Height="47" Click="btn_entrar_Click"/>
-        <Button x:Name="btn_salir" Content="Salida" HorizontalAlignment="Left" Margin="429,74,0,0" VerticalAlignment="Top" Width="121" Height="47" Click="btn_salir_Click"/>
+        <DataGrid ItemsSource="{Binding ListaDeDias}" AutoGenerateColumns="False" ColumnWidth="*" Margin="44,179,43,31" AlternatingRowBackground="Beige" CanUserReorderColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nombre" IsReadOnly="True" Binding="{Binding Nombre}"/>
+                <DataGridTextColumn Header="Dia" IsReadOnly="True" Binding="{Binding Dia}"/>
+                <DataGridTextColumn Header="Primera entrada" IsReadOnly="True" Binding="{Binding Entrada1}"/>
+                <DataGridTextColumn Header="Primera salida" IsReadOnly="True" Binding="{Binding Salida1}"/>
+                <DataGridTextColumn Header="Segunda entrada" IsReadOnly="True" Binding="{Binding Entrada2}"/>
+                <DataGridTextColumn Header="Segunda salida" IsReadOnly="True" Binding="{Binding Salida2}"/>
+                <DataGridTextColumn Header="Warning" IsReadOnly="True" Binding="{Binding Warning}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btn_entrar" Content="Entrada" HorizontalAlignment="Left" Margin="251,74,0,0" VerticalAlignment="Top" Width="121" Height="47" Command="{Binding RegistrarEntrada}" Click="btn_entrar_Click" />
+        <Button x:Name="btn_salir" Content="Salida" HorizontalAlignment="Left" Margin="429,74,0,0" VerticalAlignment="Top" Width="121" Height="47" Command="{Binding RegistrarSalida}" Click="btn_salir_Click"/>
     </Grid>
 </UserControl>
